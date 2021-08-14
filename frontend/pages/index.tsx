@@ -19,7 +19,7 @@ const Home = ({ articles, categories, homepage }: any) => {
     <Layout categories={categories} seo={Seo}>
       <Seo seo={homepage.seo} />
       <div>
-        <div className="hero min-h-screen bg-white rounded px-5">
+        <div className="hero min-h-screen bg-white rounded px-5 mb-5">
           <div className="flex-col hero-content lg:flex-row-reverse">
             <Image
               src="/Aravind_Appadurai_Photo.png"
@@ -118,8 +118,8 @@ const Home = ({ articles, categories, homepage }: any) => {
           </div>
         </div>
 
-        <div className="hero bg-white rounded px-5">
-          <h2>Projects</h2>
+        <div className="hero bg-white rounded px-5 py-10 mb-5">
+          <h2 className="text-3xl font-bold">Projects</h2>
         </div>
 
         <div>

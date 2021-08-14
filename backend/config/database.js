@@ -5,11 +5,11 @@ module.exports = ({ env }) => ({
       connector: 'bookshelf',
       settings: {
         client: 'postgres',
-        host: env('DATABASE_HOST', 'db.dgwahuftgzpncwiwctdg.supabase.co'),
-        port: env.int('DATABASE_PORT', 6543),
-        database: env('DATABASE_NAME', 'postgres'),
-        username: env('DATABASE_USERNAME', 'postgres'),
-        password: env('DATABASE_PASSWORD', '$+ww:=#3TMqb(zn."(6c&^gK},bYPSWg'),
+        host: process.env.DATABASE_HOST,
+        port: process.env.DATABASE_PORT,
+        database: process.env.DATABASE_NAME,
+        username: process.env.DATABASE_USERNAME,
+        password: process.env.DATABASE_PASSWORD,
         ssl: env.bool('DATABASE_SSL', false),
       },
       options: {}
