@@ -19,33 +19,36 @@ const Article = ({ article, categories }: any) => {
   return (
     <Layout categories={categories} seo={seo}>
       <Seo seo={seo} />
-      <div className="prose lg:prose-xl min-h-full mx-auto bg-white sm:p-4 md:p-8 lg:p-12">
-        <div id="banner" data-src={imageUrl} data-srcset={imageUrl} data-uk-img>
+      <div className="prose max-w-screen-lg min-h-full mx-auto bg-white sm:p-4 md:p-8 lg:p-12">
+        <div id="banner" data-src={imageUrl} data-srcset={imageUrl}>
           <h1>{article.title}</h1>
-          {article.tags.map((a: { slug: {} | null | undefined }) => {
+          <p className="mt-2 mb-4">
+          {article.tags?.map((a: { slug: {} | null | undefined }) => {
             return (
               <span className="badge badge-primary" key={a.slug + ""}>
                 #{a.slug}
               </span>
             )
           })}
+          </p>
         </div>
         <div>
-          <div className="prose lg:prose-xl">
+          <div className="prose max-w-screen-lg">
             <ReactMarkdown source={article.content} escapeHtml={false} />
             <hr />
-            <div>
-              <div>
-                {article.author.picture && (
-                  <NextImage image={article.author.picture} style="" />
-                )}
+
+            <div className="">
+              <div className="avatar">
+                <div className="rounded-full w-10 h-10 ring ring-primary ring-offset-base-100 ring-offset-2">
+                  {article.author.picture && (
+                    <NextImage image={article.author.picture} style="" />
+                  )}
+                </div>
               </div>
-              <div>
-                <p>By {article.author.name}</p>
-                <p>
-                  <Moment format="MMM Do YYYY">{article.published_at}</Moment>
-                </p>
-              </div>
+              <p>{article.author.name}</p>
+              <p>
+                <Moment format="MMM Do YYYY">{article.published_at}</Moment>
+              </p>
             </div>
           </div>
         </div>
@@ -72,7 +75,10 @@ export async function getStaticProps({ params }: any) {
   const categories = await fetchAPI("/categories")
 
   return {
-    props: { article: articles[0], categories },
+    props: {
+      article: articles[0],
+      categories,
+    },
     revalidate: 1,
   }
 }

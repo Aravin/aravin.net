@@ -12,12 +12,15 @@ const Category = ({ category, categories }) => {
   return (
     <Layout categories={categories}>
       <Seo seo={seo} />
-      <div className="">
-        <div className="">
-          <h1>{category.name}</h1>
-          <Articles articles={category.articles} />
-        </div>
+
+      <div className="text-center mt-10 mb-5">
+        <h2 className="text-3xl font-bold">{category.name}</h2>
       </div>
+      
+      <div>
+        <Articles articles={category.articles} />
+      </div>
+
     </Layout>
   )
 }

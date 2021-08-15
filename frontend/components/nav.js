@@ -5,9 +5,9 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 
 const navigation = [
-  { name: 'Data Structures', href: '#', current: false },
-  { name: 'Algorithms', href: '#', current: false },
-  { name: 'JavaScript', href: '#', current: false },
+  { name: 'Data Structures', href: '/category/data-structures', current: false },
+  { name: 'Algorithms', href: '/category/algorithms', current: false },
+  { name: 'JavaScript', href: '/category/javascript', current: false },
 ]
 
 function classNames(...classes) {
@@ -41,7 +41,7 @@ const Nav = ({ categories }) => {
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
-                      <a
+                      <Link
                         key={item.name}
                         href={item.href}
                         className={classNames(
@@ -51,7 +51,7 @@ const Nav = ({ categories }) => {
                         aria-current={item.current ? 'page' : undefined}
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -63,7 +63,7 @@ const Nav = ({ categories }) => {
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navigation.map((item) => (
-                <a
+                <Link
                   key={item.name}
                   href={item.href}
                   className={classNames(
@@ -73,7 +73,7 @@ const Nav = ({ categories }) => {
                   aria-current={item.current ? 'page' : undefined}
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
             </div>
             <hr className></hr>

@@ -17,10 +17,12 @@
     },
     "articles": {
       "via": "tags",
-      "collection": "article",
-      "dominant": true
+      "collection": "article"
     },
     "color": {
+      "type": "string"
+    },
+    "Name": {
       "type": "string"
     }
   }

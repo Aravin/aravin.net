@@ -17,6 +17,7 @@ const Image = ({ image, style }) => {
       objectFit="fill"
       src={url}
       alt={alternativeText || ""}
+      style={style}
     />
   )
 }
