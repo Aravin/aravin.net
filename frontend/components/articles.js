@@ -5,7 +5,7 @@ const Articles = ({ articles, limit }) => {
   // const leftArticlesCount = Math.ceil(articles.length / 5)
   // const leftArticles = articles.slice(0, leftArticlesCount)
   // const rightArticles = articles.slice(leftArticlesCount, articles.length)
-  const filteredArticles = articles.slice(0, limit || articles.length)
+  const filteredArticles = articles?.slice(0, limit || articles.length)
 
   return (
     <div>

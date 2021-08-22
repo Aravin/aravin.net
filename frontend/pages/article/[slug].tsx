@@ -7,7 +7,7 @@ import Seo from "../../components/seo"
 import { getStrapiMedia } from "../../lib/media"
 
 const Article = ({ article, categories }: any) => {
-  const imageUrl = getStrapiMedia(article.image)
+  const imageUrl = article.image && getStrapiMedia(article.image)
 
   const seo = {
     metaTitle: article.title,
@@ -23,7 +23,7 @@ const Article = ({ article, categories }: any) => {
         <div id="banner" data-src={imageUrl} data-srcset={imageUrl}>
           <h1>{article.title}</h1>
           <p className="mt-2 mb-4">
-            {article.tags?.map((a: { slug: {} | null | undefined }) => {
+            {article.tags && article.tags?.map((a: { slug: {} | null | undefined }) => {
               return (
                 <span className="badge badge-primary" key={a.slug + ""}>
                   #{a.slug}

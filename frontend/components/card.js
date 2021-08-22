@@ -16,17 +16,18 @@ const Card = ({ article }) => {
               {moment(article.created_at).fromNow()}
             </p>
 
-            <div className="flex">
-              <div className="flex-1 mt-2">
+            <div className="flex mt-2">
+              <div className="flex-1">
                 <p>
-                  <span className="font-bold">Category</span>{" "}
-                  {article.category.name}
+                  <span className="font-bold underline">Category {" "}</span>
+                  <span>{article.category.name}</span>
                 </p>
               </div>
               <div className="flex-1">
-                {article.tags && (
-                  <p className="badge">
-                    {article.tags?.map((_) => "#" + _.slug).join(", ")}
+                { article.tags?.length > 0 && (
+                  <p>
+                    <span className="font-bold underline">Tags {" "}</span>
+                    <span className="badge">{ article.tags?.map((_) => "#" + _.slug).join(", ")}</span>                    
                   </p>
                 )}
               </div>
