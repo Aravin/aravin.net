@@ -19,15 +19,17 @@ const Card = ({ article }) => {
             <div className="flex mt-2">
               <div className="flex-1">
                 <p>
-                  <span className="font-bold underline">Category {" "}</span>
+                  <span className="font-bold underline">Category </span>
                   <span>{article.category.name}</span>
                 </p>
               </div>
               <div className="flex-1">
-                { article.tags?.length > 0 && (
+                {article.tags?.length > 0 && (
                   <p>
-                    <span className="font-bold underline">Tags {" "}</span>
-                    <span className="badge">{ article.tags?.map((_) => "#" + _.slug).join(", ")}</span>                    
+                    <span className="font-bold underline">Tags </span>
+                    <span className="badge">
+                      {article.tags?.map((_) => "#" + _.slug).join(", ")}
+                    </span>
                   </p>
                 )}
               </div>
