@@ -23,13 +23,13 @@ const Article = ({ article, categories }: any) => {
         <div id="banner" data-src={imageUrl} data-srcset={imageUrl}>
           <h1>{article.title}</h1>
           <p className="mt-2 mb-4">
-          {article.tags?.map((a: { slug: {} | null | undefined }) => {
-            return (
-              <span className="badge badge-primary" key={a.slug + ""}>
-                #{a.slug}
-              </span>
-            )
-          })}
+            {article.tags?.map((a: { slug: {} | null | undefined }) => {
+              return (
+                <span className="badge badge-primary" key={a.slug + ""}>
+                  #{a.slug}
+                </span>
+              )
+            })}
           </p>
         </div>
         <div>

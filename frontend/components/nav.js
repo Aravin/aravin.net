@@ -1,17 +1,21 @@
 import React from "react"
 import Link from "next/link"
-import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
+import { Fragment } from "react"
+import { Disclosure, Menu, Transition } from "@headlessui/react"
+import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline"
 
 const navigation = [
-  { name: 'Data Structures', href: '/category/data-structures', current: false },
-  { name: 'Algorithms', href: '/category/algorithms', current: false },
-  { name: 'JavaScript', href: '/category/javascript', current: false },
+  {
+    name: "Data Structures",
+    href: "/category/data-structures",
+    current: false,
+  },
+  { name: "Algorithms", href: "/category/algorithms", current: false },
+  { name: "JavaScript", href: "/category/javascript", current: false },
 ]
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ")
 }
 
 const Nav = ({ categories }) => {
@@ -45,10 +49,12 @@ const Nav = ({ categories }) => {
                         key={item.name}
                         href={item.href}
                         className={classNames(
-                          item.current ? 'bg-primary text-white' : 'text-gray-500 hover:bg-primary-focus hover:text-white',
-                          'px-3 py-2 rounded-md text-sm font-medium'
+                          item.current
+                            ? "bg-primary text-white"
+                            : "text-gray-500 hover:bg-primary-focus hover:text-white",
+                          "px-3 py-2 rounded-md text-sm font-medium"
                         )}
-                        aria-current={item.current ? 'page' : undefined}
+                        aria-current={item.current ? "page" : undefined}
                       >
                         {item.name}
                       </Link>
@@ -67,10 +73,12 @@ const Nav = ({ categories }) => {
                   key={item.name}
                   href={item.href}
                   className={classNames(
-                    item.current ? 'bg-primary text-white' : 'text-gray-500 hover:bg-primary-focus hover:text-white',
-                    'block px-3 py-2 rounded-md text-base font-medium'
+                    item.current
+                      ? "bg-primary text-white"
+                      : "text-gray-500 hover:bg-primary-focus hover:text-white",
+                    "block px-3 py-2 rounded-md text-base font-medium"
                   )}
-                  aria-current={item.current ? 'page' : undefined}
+                  aria-current={item.current ? "page" : undefined}
                 >
                   {item.name}
                 </Link>
@@ -80,7 +88,6 @@ const Nav = ({ categories }) => {
           </Disclosure.Panel>
         </>
       )}
-      
     </Disclosure>
   )
 }
