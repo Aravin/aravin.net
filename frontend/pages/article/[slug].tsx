@@ -27,7 +27,7 @@ const Article = ({ article, categories }: any) => {
               article.tags?.map((a: any) => {
                 return (
                   <span
-                    className="badge badge-primary"
+                    className="badge"
                     style={a.color && { backgroundColor: a.color }}
                     key={a.slug + ""}
                   >

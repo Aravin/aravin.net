@@ -31,7 +31,7 @@ const Card = ({ article }) => {
                       return (
                         <span
                           key={_.color}
-                          className={"badge badge-primary ml-2"}
+                          className={"badge ml-1"}
                           style={_.color && { backgroundColor: _.color }}
                         >{`#${_.slug}`}</span>
                       )
