@@ -24,9 +24,13 @@ const Article = ({ article, categories }: any) => {
           <h1>{article.title}</h1>
           <p className="mt-2 mb-4">
             {article.tags &&
-              article.tags?.map((a: { slug: {} | null | undefined }) => {
+              article.tags?.map((a: any) => {
                 return (
-                  <span className="badge badge-primary" key={a.slug + ""}>
+                  <span
+                    className="badge"
+                    style={a.color && { backgroundColor: a.color }}
+                    key={a.slug + ""}
+                  >
                     #{a.slug}
                   </span>
                 )
