@@ -1,3 +1,4 @@
+import React, { useEffect } from "react"
 import ReactMarkdown from "react-markdown"
 import Moment from "react-moment"
 import { fetchAPI } from "../../lib/api"
@@ -5,8 +6,18 @@ import Layout from "../../components/layout"
 import NextImage from "../../components/image"
 import Seo from "../../components/seo"
 import { getStrapiMedia } from "../../lib/media"
+import hljs from "highlight.js/lib/common"
+import "highlight.js/styles/atom-one-dark.css"
+import javascript from "highlight.js/lib/languages/javascript"
+import cs from "highlight.js/lib/languages/csharp"
+hljs.registerLanguage("javascript", javascript)
+hljs.registerLanguage("cs", cs)
 
 const Article = ({ article, categories }: any) => {
+  useEffect(() => {
+    hljs.initHighlighting()
+  }, [])
+
   const imageUrl = article.image && getStrapiMedia(article.image)
 
   const seo = {
@@ -27,7 +38,7 @@ const Article = ({ article, categories }: any) => {
               article.tags?.map((a: any) => {
                 return (
                   <span
-                    className="badge"
+                    className="badge ml-1"
                     style={a.color && { backgroundColor: a.color }}
                     key={a.slug + ""}
                   >

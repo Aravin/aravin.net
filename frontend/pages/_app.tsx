@@ -17,6 +17,8 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     <>
       <Head>
         <link rel="shortcut icon" href="/favicon.ico" />
+        {/* eslint-disable-next-line react/no-string-refs  */}
+        <link ref="stylesheet" href="highlight.js/styles/default.css" />
       </Head>
       <GlobalContext.Provider value={global}>
         <Component {...pageProps} />
