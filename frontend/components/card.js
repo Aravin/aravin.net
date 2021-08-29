@@ -27,9 +27,13 @@ const Card = ({ article }) => {
                 {article.tags?.length > 0 && (
                   <p>
                     <span className="font-bold underline">Tags </span>
-                    <span className="badge">
-                      {article.tags?.map((_) => "#" + _.slug).join(", ")}
-                    </span>
+                    {
+                      article.tags?.map((_) => 
+                        {
+                          return (<span className={'badge ml-2'} style={_.color && { backgroundColor: _.color}}>{`#${_.slug}`}</span>)
+                        }
+                      )
+                    }
                   </p>
                 )}
               </div>

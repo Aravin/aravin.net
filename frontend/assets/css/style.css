@@ -5,3 +5,24 @@ body {
   font-family: roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
+
+.mockup{
+  &-code{
+    @apply relative overflow-hidden overflow-x-auto;
+    pre[data-prefix]{
+      &:before{
+        content: attr(data-prefix);
+        @apply inline-block text-right;
+      }
+    }
+  }
+  &-window{
+    @apply relative overflow-hidden overflow-x-auto;
+    pre[data-prefix]{
+      &:before{
+        content: attr(data-prefix);
+        @apply inline-block text-right;
+      }
+    }
+  }
+}
