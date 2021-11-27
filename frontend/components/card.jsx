@@ -5,7 +5,7 @@ import moment from "moment"
 
 const Card = ({ article }) => {
   return (
-    <Link as={`/article/${article.slug}`} href="/article/[id]" >
+    <Link as={`/article/${article.slug}`} href="/article/[id]">
       <a>
         <div className="card bg-white mb-5 rounded border-2 hover:border-primary-focus prose-md">
           <div className="card-body">

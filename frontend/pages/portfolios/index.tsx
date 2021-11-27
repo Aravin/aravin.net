@@ -1,17 +1,16 @@
-import React from "react";
-import Image from "next/image";
-import Layout from "../../components/layout";
-import Seo from "../../components/seo";
-import emiCalculatorImage from "../../public/projects/emi-calculator.png";
-import sipCalculatorImage from "../../public/projects/sip-calculator.png";
-import warrantyManagerImage from "../../public/projects/warranty-manager.jpg";
+import React from "react"
+import Image from "next/image"
+import Layout from "../../components/layout"
+import Seo from "../../components/seo"
+import emiCalculatorImage from "../../public/projects/emi-calculator.png"
+import sipCalculatorImage from "../../public/projects/sip-calculator.png"
+import warrantyManagerImage from "../../public/projects/warranty-manager.jpg"
 
 const Home = () => {
   return (
     <Layout seo={Seo}>
       {/* <Seo seo={homepage.seo} /> */}
       <div>
-
         <div className="text-center mt-10 mb-5">
           <h2 className="text-3xl font-bold">Projects</h2>
         </div>
@@ -210,9 +209,6 @@ const Home = () => {
             </div>
           </div>
         </div>
-
-
-
       </div>
     </Layout>
   )
