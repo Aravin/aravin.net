@@ -5,7 +5,7 @@ import moment from "moment"
 
 const Card = ({ article }) => {
   return (
-    <Link as={`/article/${article.slug}`} href="/article/[id]">
+    <Link as={`/article/${article.slug}`} href="/article/[id]" >
       <a>
         <div className="card bg-white mb-5 rounded border-2 hover:border-primary-focus prose-md">
           <div className="card-body">
@@ -19,14 +19,14 @@ const Card = ({ article }) => {
             <div className="flex mt-2">
               <div className="flex-1">
                 <p>
-                  <span className="font-bold underline">Category </span>
+                  <span className="font-bold">Category </span>
                   <span>{article.category.name}</span>
                 </p>
               </div>
               <div className="flex-1">
                 {article.tags?.length > 0 && (
                   <p>
-                    <span className="font-bold underline">Tags </span>
+                    <span className="font-bold">Tags </span>
                     {article.tags?.map((_) => {
                       return (
                         <span

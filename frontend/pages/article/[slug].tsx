@@ -15,7 +15,7 @@ hljs.registerLanguage("cs", cs)
 
 const Article = ({ article, categories }: any) => {
   useEffect(() => {
-    hljs.initHighlighting()
+    hljs.highlightAll()
   }, [])
 
   const imageUrl = article.image && getStrapiMedia(article.image)
@@ -31,7 +31,8 @@ const Article = ({ article, categories }: any) => {
     <Layout categories={categories} seo={seo}>
       <Seo seo={seo} />
       <div className="prose max-w-screen-lg min-h-full mx-auto bg-white sm:p-4 md:p-8 lg:p-12">
-        <div id="banner" data-src={imageUrl} data-srcset={imageUrl}>
+        <div id="banner">
+        {/* <div id="banner" data-src={imageUrl} data-srcset={imageUrl}> */}
           <h1>{article.title}</h1>
           <p className="mt-2 mb-4">
             {article.tags &&
@@ -50,14 +51,14 @@ const Article = ({ article, categories }: any) => {
         </div>
         <div>
           <div className="prose max-w-screen-lg">
-            <ReactMarkdown source={article.content} escapeHtml={false} />
+            <ReactMarkdown children={article.content} escapeHtml={false} skipHtml ={true}></ReactMarkdown>
             <hr />
 
             <div className="">
               <div className="avatar">
                 <div className="rounded-full w-10 h-10 ring ring-primary ring-offset-base-100 ring-offset-2">
                   {article.author.picture && (
-                    <NextImage image={article.author.picture} style="" />
+                    <NextImage image={article.author.picture} unoptimized={true} />
                   )}
                 </div>
               </div>

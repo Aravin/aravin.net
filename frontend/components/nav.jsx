@@ -3,15 +3,17 @@ import Link from "next/link"
 import { Fragment } from "react"
 import { Disclosure, Menu, Transition } from "@headlessui/react"
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline"
+import { useRouter } from "next/router"
 
 const navigation = [
-  {
-    name: "Data Structures",
-    href: "/category/data-structures",
-    current: false,
-  },
-  { name: "Algorithms", href: "/category/algorithms", current: false },
-  { name: "JavaScript", href: "/category/javascript", current: false },
+  // {
+  //   name: "Data Structures",
+  //   href: "/category/data-structures",
+  //   current: false,
+  // },
+  // { name: "Algorithms", href: "/category/algorithms", current: false },
+  { name: "Portfolios", href: "/portfolios", current: false },
+  { name: "Blogs", href: "/articles", current: false },
 ]
 
 function classNames(...classes) {
@@ -19,6 +21,8 @@ function classNames(...classes) {
 }
 
 const Nav = ({ categories }) => {
+  const router = useRouter()
+
   return (
     <Disclosure as="nav" className="bg-base-100 fixed w-full z-10 top-0">
       {({ open }) => (
@@ -48,15 +52,18 @@ const Nav = ({ categories }) => {
                       <Link
                         key={item.name}
                         href={item.href}
-                        className={classNames(
-                          item.current
-                            ? "bg-primary text-white"
-                            : "text-gray-500 hover:bg-primary-focus hover:text-white",
-                          "px-3 py-2 rounded-md text-sm font-medium"
-                        )}
                         aria-current={item.current ? "page" : undefined}
                       >
-                        {item.name}
+                        <a
+                          className={`${
+                            router.pathname === item.href
+                              ? "bg-primary text-white "
+                              : "hover:bg-primary-focus hover:text-white "
+                          }
+                        px-3 py-2 rounded-md text-sm font-medium`}
+                        >
+                          {item.name}
+                        </a>
                       </Link>
                     ))}
                   </div>
@@ -64,7 +71,7 @@ const Nav = ({ categories }) => {
               </div>
             </div>
           </div>
-          <hr className></hr>
+          <hr></hr>
 
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
