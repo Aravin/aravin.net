@@ -13,17 +13,18 @@
   "pluginOptions": {},
   "attributes": {
     "slug": {
-      "type": "uid"
-    },
-    "articles": {
-      "via": "tags",
-      "collection": "article"
+      "type": "uid",
+      "targetField": "Name"
     },
     "color": {
       "type": "string"
     },
     "Name": {
       "type": "string"
+    },
+    "articles": {
+      "via": "tags",
+      "collection": "article"
     }
   }
 }
