@@ -58,10 +58,7 @@ const Article = ({ article, categories }: any) => {
               <div className="avatar">
                 <div className="rounded-full w-10 h-10 ring ring-primary ring-offset-base-100 ring-offset-2">
                   {article.author.picture && (
-                    <NextImage
-                      image={article.author.picture}
-                      unoptimized={true}
-                    />
+                    <NextImage image={article.author.picture} />
                   )}
                 </div>
               </div>
