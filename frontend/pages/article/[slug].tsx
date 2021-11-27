@@ -1,5 +1,6 @@
 import React, { useEffect } from "react"
-import ReactMarkdown from "react-markdown"
+import ReactMarkdown from "react-markdown";
+import rehypeRaw from 'rehype-raw'
 import Moment from "react-moment"
 import { fetchAPI } from "../../lib/api"
 import Layout from "../../components/layout"
@@ -51,7 +52,11 @@ const Article = ({ article, categories }: any) => {
         </div>
         <div>
           <div className="prose max-w-screen-lg">
-            <ReactMarkdown>{article.content}</ReactMarkdown>
+            <div>
+              <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+                {article.content}
+              </ReactMarkdown>
+            </div>
             <hr />
 
             <div className="">
