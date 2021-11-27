@@ -19,7 +19,7 @@ import warrantyManagerImage from "../public/projects/warranty-manager.jpg"
 
 const Home = ({ articles, categories, homepage }: any) => {
   return (
-    <Layout categories={categories} seo={Seo}>
+    <Layout seo={Seo}>
       <Seo seo={homepage.seo} />
       <div>
         <div className="hero min-h-screen bg-white rounded px-5 mb-5">
