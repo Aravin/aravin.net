@@ -52,7 +52,7 @@ const Article = ({ article, categories }: any) => {
         <div>
           <div className="prose max-w-screen-lg">
             <ReactMarkdown
-              children={article.content}
+              source={article.content}
               escapeHtml={false}
               skipHtml={true}
             />
