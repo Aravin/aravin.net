@@ -55,7 +55,7 @@ const Article = ({ article, categories }: any) => {
               children={article.content}
               escapeHtml={false}
               skipHtml={true}
-            ></ReactMarkdown>
+            />
             <hr />
 
             <div className="">
