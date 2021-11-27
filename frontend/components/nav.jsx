@@ -13,7 +13,7 @@ const navigation = [
   // },
   // { name: "Algorithms", href: "/category/algorithms", current: false },
   { name: "Portfolios", href: "/portfolios", current: false },
-  { name: "Blogs", href: "/article", current: false },
+  { name: "Blogs", href: "/articles", urlMatch: "/article", current: false },
 ]
 
 function classNames(...classes) {
@@ -56,7 +56,7 @@ const Nav = ({ categories }) => {
                       >
                         <a
                           className={`${
-                            router.pathname.includes(item.href)
+                            router.pathname.includes(item.urlMatch)
                               ? "bg-primary text-white "
                               : "hover:bg-primary-focus hover:text-white "
                           }
