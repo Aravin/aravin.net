@@ -56,7 +56,7 @@ const Nav = ({ categories }) => {
                       >
                         <a
                           className={`${
-                            router.pathname === item.href
+                            router.pathname.includes(item.href)
                               ? "bg-primary text-white "
                               : "hover:bg-primary-focus hover:text-white "
                           }
