@@ -51,9 +51,7 @@ const Article = ({ article, categories }: any) => {
         </div>
         <div>
           <div className="prose max-w-screen-lg">
-            <ReactMarkdown escapeHtml={false} skipHtml={true}>
-              {article.content}
-            </ReactMarkdown>
+            <ReactMarkdown escapeHtml={false}>{article.content}</ReactMarkdown>
             <hr />
 
             <div className="">
