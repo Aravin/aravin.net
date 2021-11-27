@@ -26,7 +26,7 @@ const Article = ({ articles }: any) => {
   }
 
   return (
-    <Layout categories={articles} seo={seo}>
+    <Layout seo={seo}>
       <Seo seo={seo} />
       <div className="">
         <Articles articles={articles} limit={10} />
