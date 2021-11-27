@@ -28,7 +28,7 @@ const Article = ({ article, categories }: any) => {
   }
 
   return (
-    <Layout categories={categories} seo={seo}>
+    <Layout seo={seo}>
       <Seo seo={seo} />
       <div className="prose max-w-screen-lg min-h-full mx-auto bg-white sm:p-4 md:p-8 lg:p-12">
         <div id="banner">
