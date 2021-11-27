@@ -13,7 +13,7 @@ const navigation = [
   // },
   // { name: "Algorithms", href: "/category/algorithms", current: false },
   { name: "Portfolios", href: "/portfolios", current: false },
-  { name: "Blogs", href: "/articles", current: false },
+  { name: "Blogs", href: "/article", current: false },
 ]
 
 function classNames(...classes) {
