@@ -16,12 +16,106 @@ import {
 import emiCalculatorImage from "../public/projects/emi-calculator.png"
 import sipCalculatorImage from "../public/projects/sip-calculator.png"
 import warrantyManagerImage from "../public/projects/warranty-manager.jpg"
+import Particles from "react-tsparticles"
 
 const Home = ({ articles, categories, homepage }: any) => {
+  const particlesInit = (main: any) => {
+    // console.log(main)
+    // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
+  }
+
+  const particlesLoaded = (container: any) => {
+    // console.log(container)
+  }
+
   return (
     <Layout seo={Seo}>
       <Seo seo={homepage.seo} />
-      <div>
+      <Particles
+        id="tsparticles"
+        init={particlesInit}
+        loaded={particlesLoaded}
+        options={{
+          background: {},
+          fpsLimit: 60,
+          interactivity: {
+            events: {
+              onClick: {
+                enable: true,
+                mode: "push",
+              },
+              onHover: {
+                enable: true,
+                mode: "repulse",
+              },
+              resize: true,
+            },
+            modes: {
+              grab: {
+                distance: 400,
+                line_linked: {
+                  opacity: 1,
+                },
+              },
+              bubble: {
+                distance: 400,
+                duration: 2,
+                opacity: 0.8,
+                size: 40,
+              },
+              push: {
+                quantity: 1,
+              },
+              repulse: {
+                distance: 200,
+                duration: 0.4,
+              },
+            },
+          },
+          particles: {
+            color: {
+              value: "rgb(33, 201, 84)",
+            },
+            links: {
+              color: "rgb(33, 201, 84)",
+              distance: 150,
+              enable: true,
+              opacity: 0.5,
+              width: 1,
+            },
+            collisions: {
+              enable: true,
+            },
+            move: {
+              direction: "none",
+              enable: true,
+              outMode: "bounce",
+              random: false,
+              speed: 2,
+              straight: false,
+            },
+            number: {
+              density: {
+                enable: true,
+                value_area: 800,
+              },
+              value: 80,
+            },
+            opacity: {
+              value: 0.5,
+            },
+            shape: {
+              type: "circle",
+            },
+            size: {
+              random: true,
+              value: 5,
+            },
+          },
+          detectRetina: true,
+        }}
+      />
+      <div className="card">
         <div className="hero min-h-screen bg-white rounded px-5 mb-5">
           <div className="flex-col hero-content lg:flex-row-reverse">
             <Image
@@ -33,7 +127,7 @@ const Home = ({ articles, categories, homepage }: any) => {
             ></Image>
             <div>
               <h1 className="mb-5 text-5xl font-bold">
-                Hello 👋🏽 I&apos;m Aravind Appadurai
+                Hello 👋🏻 I&apos;m Aravind Appadurai
               </h1>
               <p className="mb-10">
                 I am working as a Full Stack Software Developer in a Private
