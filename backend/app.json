@@ -1,5 +1,6 @@
 {
   "name": "Strapi",
+  "stack": "heroku-22",
   "description": "Strapi Heroku 1 click deploy button",
   "keywords": [
     "strapi",
