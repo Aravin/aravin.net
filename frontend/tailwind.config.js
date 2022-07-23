@@ -1,14 +1,10 @@
 module.exports = {
-  purge: [],
-  darkMode: false, // or 'media' or 'class'
-  theme: {
-    extend: {},
-  },
-  variants: {
-    extend: {},
-  },
-  plugins: [
-    require('@tailwindcss/typography'),
-    require("daisyui"),
-  ]
+  content: [
+    "./public/**/*.{html,ico,svg}",
+    "./pages/**/*.{js,jsx,ts,tsx}",
+    "./components/**/*.{js,jsx,ts,tsx}",
+    "./lib/**/*.{js,jsx,ts,tsx}",
+    "./styles/**/*.css",
+  ],
+  plugins: [require("@tailwindcss/typography"), require("daisyui")],
 }
