@@ -86,7 +86,7 @@ export async function getStaticPaths() {
   const articles = await fetchAPI("/articles")
 
   return {
-    paths: articles.map((article: { attributes: any }) => ({
+    paths: articles?.map((article: { attributes: any }) => ({
       params: {
         slug: article.attributes.slug,
       },
