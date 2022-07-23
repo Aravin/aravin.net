@@ -45,7 +45,7 @@ MyApp.getInitialProps = async (ctx: AppContext) => {
   // Fetch global site settings from Strapi
   const global = await fetchAPI("/global")
   // Pass the data to our page via props
-  return { ...appProps, pageProps: { global } }
+  return { ...appProps, pageProps: { global: global.attributes } }
 }
 
 export default MyApp

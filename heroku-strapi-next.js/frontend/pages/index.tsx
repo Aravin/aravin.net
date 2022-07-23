@@ -30,7 +30,7 @@ const Home = ({ articles, categories, homepage }: any) => {
 
   return (
     <Layout seo={Seo}>
-      <Seo seo={homepage.seo} />
+      {/* <Seo seo={homepage.seo} /> */}
       <Particles
         id="tsparticles"
         init={particlesInit}
@@ -430,14 +430,14 @@ const Home = ({ articles, categories, homepage }: any) => {
 
 export async function getStaticProps() {
   // Run API calls in parallel
-  const [articles, categories, homepage] = await Promise.all([
+  const [articles, categories] = await Promise.all([
     fetchAPI("/articles"),
     fetchAPI("/categories"),
-    fetchAPI("/homepage"),
+    // fetchAPI("/homepage"),
   ])
 
   return {
-    props: { articles, categories, homepage },
+    props: { articles, categories },
     revalidate: 1,
   }
 }

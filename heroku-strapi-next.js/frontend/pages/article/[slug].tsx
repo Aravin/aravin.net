@@ -1,10 +1,10 @@
 import React, { useEffect } from "react"
-import ReactMarkdown from "react-markdown";
-import rehypeRaw from 'rehype-raw'
+import ReactMarkdown from "react-markdown"
+import rehypeRaw from "rehype-raw"
 import Moment from "react-moment"
 import { fetchAPI } from "../../lib/api"
 import Layout from "../../components/layout"
-import NextImage from "../../components/image"
+import Image from 'next/image'
 import Seo from "../../components/seo"
 import { getStrapiMedia } from "../../lib/media"
 import hljs from "highlight.js/lib/common"
@@ -19,7 +19,7 @@ const Article = ({ article, categories }: any) => {
     hljs.highlightAll()
   }, [])
 
-  const imageUrl = article.image && getStrapiMedia(article.image)
+  // const imageUrl = article.image && getStrapiMedia(article.image)
 
   const seo = {
     metaTitle: article.title,
@@ -35,7 +35,7 @@ const Article = ({ article, categories }: any) => {
         <div id="banner">
           {/* <div id="banner" data-src={imageUrl} data-srcset={imageUrl}> */}
           <h1>{article.title}</h1>
-          <p className="mt-2 mb-4">
+          {/* <p className="mt-2 mb-4">
             {article.tags &&
               article.tags?.map((a: any) => {
                 return (
@@ -48,7 +48,7 @@ const Article = ({ article, categories }: any) => {
                   </span>
                 )
               })}
-          </p>
+          </p> */}
         </div>
         <div>
           <div className="prose max-w-screen-lg">
@@ -62,12 +62,15 @@ const Article = ({ article, categories }: any) => {
             <div className="">
               <div className="avatar">
                 <div className="rounded-full w-10 h-10 ring ring-primary ring-offset-base-100 ring-offset-2">
-                  {article.author.picture && (
-                    <NextImage image={article.author.picture} />
-                  )}
+                  <Image
+                    src="/Aravin.png"
+                    alt="Aravind Appadurai"
+                    width={64}
+                    height={64}
+                  />
                 </div>
               </div>
-              <p>{article.author.name}</p>
+              <p>{article.author.data.attributes.username}</p>
               <p>
                 <Moment format="MMM Do YYYY">{article.published_at}</Moment>
               </p>
@@ -83,9 +86,9 @@ export async function getStaticPaths() {
   const articles = await fetchAPI("/articles")
 
   return {
-    paths: articles.map((article: { slug: any }) => ({
+    paths: articles.map((article: { attributes: any }) => ({
       params: {
-        slug: article.slug,
+        slug: article.attributes.slug,
       },
     })),
     fallback: false,
@@ -98,7 +101,7 @@ export async function getStaticProps({ params }: any) {
 
   return {
     props: {
-      article: articles[0],
+      article: articles[0].attributes,
       categories,
     },
     revalidate: 1,
