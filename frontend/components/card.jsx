@@ -12,7 +12,7 @@ const Card = ({ article }) => {
             <h2 className="card-title">{article.attributes.title}</h2>
 
             <p>
-              <span>Aravind Appadurai </span> on{" "}
+              <span>- Aravind Appadurai </span> on{" "}
               {moment(article.attributes.created_at).fromNow()}
             </p>
 
