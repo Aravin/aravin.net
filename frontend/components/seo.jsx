@@ -4,7 +4,8 @@ import { GlobalContext } from "../pages/_app"
 import { getStrapiMedia } from "../lib/media"
 
 const Seo = ({ seo }) => {
-  const { metaTitle, metaDescription, siteName, shareImage, article } = useContext(GlobalContext)
+  const { metaTitle, metaDescription, siteName, shareImage, article } =
+    useContext(GlobalContext)
 
   return (
     <Head>

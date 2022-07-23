@@ -15,6 +15,6 @@ export async function fetchAPI(path) {
       Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_API_TOKEN}`,
     },
   })
-  const data = await response.json();
-  return data.data;
+  const data = await response.json()
+  return data.data
 }

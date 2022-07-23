@@ -20,7 +20,9 @@ const Card = ({ article }) => {
               <div className="flex-1">
                 <p>
                   <span className="font-bold">Category </span>
-                  <span>{article.attributes.category.data.attributes.name}</span>
+                  <span>
+                    {article.attributes.category.data.attributes.name}
+                  </span>
                 </p>
               </div>
               <div className="flex-1">
