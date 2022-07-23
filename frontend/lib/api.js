@@ -1,6 +1,6 @@
 export function getStrapiURL(path = "") {
   return `${
-    process.env.xNEXT_PUBLIC_STRAPI_API_URL || "http://localhost:1337/api"
+    process.env.NEXT_PUBLIC_STRAPI_API_URL || "http://localhost:1337/api"
   }${path}`
 }
 
