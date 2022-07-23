@@ -26,16 +26,16 @@ const Card = ({ article }) => {
                 </p>
               </div>
               <div className="flex-1">
-                {article.attributes.tags?.length > 0 && (
+                {article.attributes.tags.data.length > 0 && (
                   <p>
                     <span className="font-bold">Tags </span>
-                    {article.attributes.tags?.map((_) => {
+                    {article.attributes.tags.data?.map((_) => {
                       return (
                         <span
-                          key={_.color}
+                          key={_.attributes.color}
                           className={"badge ml-1"}
-                          style={_.color && { backgroundColor: _.color }}
-                        >{`#${_.slug}`}</span>
+                          style={_.attributes.color && { backgroundColor: _.attributes.color }}
+                        >{`#${_.attributes.slug}`}</span>
                       )
                     })}
                   </p>
