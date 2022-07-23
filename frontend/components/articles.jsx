@@ -12,7 +12,7 @@ const Articles = ({ articles, limit }) => {
     <div>
       <div className="max-w-screen-lg mx-auto px-2">
         <div>
-          {filteredArticles.map((article, i) => {
+          {filteredArticles.map((article) => {
             return <Card article={article} key={article.attributes.slug} />
           })}
         </div>
