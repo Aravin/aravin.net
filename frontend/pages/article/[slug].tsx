@@ -31,11 +31,12 @@ const Article = ({ article, categories }: any) => {
   return (
     <Layout seo={seo}>
       <Seo seo={seo} />
-      <div className="prose max-w-screen-lg min-h-full mx-auto bg-white sm:p-4 md:p-8 lg:p-12">
-        <div id="banner">
-          {/* <div id="banner" data-src={imageUrl} data-srcset={imageUrl}> */}
-          <h1>{article.title}</h1>
-          {/* <p className="mt-2 mb-4">
+      {article &&
+        <div className="prose max-w-screen-lg min-h-full mx-auto bg-white sm:p-4 md:p-8 lg:p-12">
+          <div id="banner">
+            {/* <div id="banner" data-src={imageUrl} data-srcset={imageUrl}> */}
+            <h1>{article.title}</h1>
+            {/* <p className="mt-2 mb-4">
             {article.tags &&
               article.tags?.map((a: any) => {
                 return (
@@ -49,35 +50,36 @@ const Article = ({ article, categories }: any) => {
                 )
               })}
           </p> */}
-        </div>
-        <div>
-          <div className="prose max-w-screen-lg">
-            <div>
-              <ReactMarkdown rehypePlugins={[rehypeRaw]}>
-                {article.content}
-              </ReactMarkdown>
-            </div>
-            <hr />
-
-            <div className="">
-              <div className="avatar">
-                <div className="rounded-full w-10 h-10 ring ring-primary ring-offset-base-100 ring-offset-2">
-                  <Image
-                    src="/Aravin.png"
-                    alt="Aravind Appadurai"
-                    width={64}
-                    height={64}
-                  />
-                </div>
+          </div>
+          <div>
+            <div className="prose max-w-screen-lg">
+              <div>
+                <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+                  {article.content}
+                </ReactMarkdown>
               </div>
-              <p>{article.author.data.attributes.username}</p>
-              <p>
-                <Moment format="MMM Do YYYY">{article.published_at}</Moment>
-              </p>
+              <hr />
+
+              <div className="">
+                <div className="avatar">
+                  <div className="rounded-full w-10 h-10 ring ring-primary ring-offset-base-100 ring-offset-2">
+                    <Image
+                      src="/Aravin.png"
+                      alt="Aravind Appadurai"
+                      width={64}
+                      height={64}
+                    />
+                  </div>
+                </div>
+                <p>{article.author.data.attributes.username}</p>
+                <p>
+                  <Moment format="MMM Do YYYY">{article.published_at}</Moment>
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      }
     </Layout>
   )
 }
@@ -86,9 +88,11 @@ export async function getStaticPaths() {
   const articles = await fetchAPI("/articles")
 
   return {
-    paths: articles?.map(
-      (article: any) => "/article/" + article.attributes.slug
-    ),
+    paths: articles?.map((article: any) => ({
+      params: {
+        slug: article.attributes.slug,
+      },
+    })),
     fallback: true, // todo: testing
   }
 }
