@@ -82,18 +82,18 @@ const Article = ({ article, categories }: any) => {
   )
 }
 
-export async function getStaticPaths() {
-  const articles = await fetchAPI("/articles")
+// export async function getStaticPaths() {
+//   const articles = await fetchAPI("/articles")
 
-  return {
-    paths: articles?.map((article: any) => ({
-      params: {
-        slug: article.attributes.slug,
-      },
-    })),
-    fallback: true, // todo: testing
-  }
-}
+//   return {
+//     paths: articles?.map((article: any) => ({
+//       params: {
+//         slug: article.attributes.slug,
+//       },
+//     })),
+//     fallback: true, // todo: testing
+//   }
+// }
 
 export async function getStaticProps({ params }: any) {
   const articles = await fetchAPI(`/articles?slug=${params.slug}`)
