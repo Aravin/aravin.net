@@ -82,7 +82,7 @@ const Article = ({ article, categories }: any) => {
 }
 
 export async function getStaticPaths() {
-  const articles = await fetchAPI("/articles", { fields: ["slug"] })
+  const articles = await fetchAPI("/articles", { fields: "slug" })
 
   console.log({articles})
 
