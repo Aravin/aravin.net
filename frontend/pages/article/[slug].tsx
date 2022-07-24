@@ -84,13 +84,15 @@ const Article = ({ article, categories }: any) => {
 export async function getStaticPaths() {
   const articles = await fetchAPI("/articles", { fields: ["slug"] })
 
+  console.log({articles})
+
   return {
     paths: articles.data?.map((article: any) => ({
       params: {
         slug: article.attributes.slug,
       },
     })),
-    fallback: false,
+    fallback: true, // false
   }
 }
 
