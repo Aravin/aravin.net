@@ -1,6 +1,6 @@
 import Nav from "./nav"
 
-const Layout = ({ children, seo }) => (
+const Layout = ({ children }) => (
   <div>
     <Nav />
     <div className="max-w-7xl mx-auto px-2 pt-20 pb-10">{children}</div>

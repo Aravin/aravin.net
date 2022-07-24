@@ -13,5 +13,7 @@
     "npm-run-all": "4.1.5",
     "wait-on": "6.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "qs": "^6.11.0"
+  }
 }

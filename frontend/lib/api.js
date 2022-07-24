@@ -1,20 +1,27 @@
+import qs from "qs"
+
 export function getStrapiURL(path = "") {
   return `${
-    process.env.NEXT_PUBLIC_STRAPI_API_URL || "http://localhost:1337/api"
+    process.env.NEXT_PUBLIC_STRAPI_API_URL || "http://localhost:1337"
   }${path}`
 }
 
 // Helper to make GET requests to Strapi
-export async function fetchAPI(path) {
-  const requestUrl = `${getStrapiURL(path)}${
-    path.includes("?") ? "&" : "?"
-  }populate=*`
+export async function fetchAPI(path, urlParamsObject = {}) {
+  
+  // Build request URL
+  const queryString = qs.stringify(urlParamsObject)
+  const requestUrl = `${getStrapiURL(
+    `/api${path}${queryString ? `?${queryString}` : ""}`
+  )}`
+
+  // Trigger API call
   const response = await fetch(requestUrl, {
     method: `GET`,
     headers: {
       Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_API_TOKEN}`,
     },
   })
-  const data = await response.json()
-  return data.data
+
+  return await response.json()
 }

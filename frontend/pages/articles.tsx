@@ -1,10 +1,7 @@
 import React, { useEffect } from "react"
-import Moment from "react-moment"
 import { fetchAPI } from "../lib/api"
 import Layout from "../components/layout"
-import NextImage from "../components/image"
 import Seo from "../components/seo"
-import { getStrapiMedia } from "../lib/media"
 import hljs from "highlight.js/lib/common"
 import "highlight.js/styles/atom-one-dark.css"
 import javascript from "highlight.js/lib/languages/javascript"
@@ -26,8 +23,7 @@ const Article = ({ articles }: any) => {
   }
 
   return (
-    <Layout seo={seo}>
-      <Seo seo={seo} />
+    <Layout>
       <div className="">
         <Articles articles={articles} limit={10} />
       </div>
@@ -49,11 +45,11 @@ const Article = ({ articles }: any) => {
 // }
 
 export async function getStaticProps({ params }: any) {
-  const articles = await fetchAPI(`/articles`)
+  const articles = await fetchAPI(`/articles`, { populate: "*" })
 
   return {
     props: {
-      articles: articles,
+      articles: articles.data,
     },
     revalidate: 1,
   }

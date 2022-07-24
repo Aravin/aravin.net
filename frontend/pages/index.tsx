@@ -431,13 +431,13 @@ const Home = ({ articles, categories, homepage }: any) => {
 export async function getStaticProps() {
   // Run API calls in parallel
   const [articles, categories] = await Promise.all([
-    fetchAPI("/articles"),
-    fetchAPI("/categories"),
+    fetchAPI("/articles", { populate: "*" }),
+    fetchAPI("/categories", { populate: "*" }),
     // fetchAPI("/homepage"),
   ])
 
   return {
-    props: { articles, categories },
+    props: { articles: articles.data, categories: categories.data },
     revalidate: 1,
   }
 }

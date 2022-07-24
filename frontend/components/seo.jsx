@@ -4,33 +4,43 @@ import { GlobalContext } from "../pages/_app"
 import { getStrapiMedia } from "../lib/media"
 
 const Seo = ({ seo }) => {
-  const { metaTitle, metaDescription, siteName, shareImage, article } =
-    useContext(GlobalContext)
+  const { defaultSeo, siteName } = useContext(GlobalContext)
+  const seoWithDefaults = {
+    ...defaultSeo,
+    ...seo,
+  }
+  const fullSeo = {
+    ...seoWithDefaults,
+    // Add title suffix
+    metaTitle: `${seoWithDefaults.metaTitle} | ${siteName}`,
+    // Get full image URL
+    shareImage: getStrapiMedia(defaultSeo.shareImage),
+  }
 
   return (
     <Head>
-      {metaTitle && (
+      {fullSeo.metaTitle && (
         <>
-          <title>{metaTitle}</title>
-          <meta property="og:title" content={metaTitle} />
-          <meta name="twitter:title" content={metaTitle} />
+          <title>{fullSeo.metaTitle}</title>
+          <meta property="og:title" content={fullSeo.metaTitle} />
+          <meta name="twitter:title" content={fullSeo.metaTitle} />
         </>
       )}
-      {metaDescription && (
+      {fullSeo.metaDescription && (
         <>
-          <meta name="description" content={metaDescription} />
-          <meta property="og:description" content={metaDescription} />
-          <meta name="twitter:description" content={metaDescription} />
+          <meta name="description" content={fullSeo.metaDescription} />
+          <meta property="og:description" content={fullSeo.metaDescription} />
+          <meta name="twitter:description" content={fullSeo.metaDescription} />
         </>
       )}
-      {shareImage && (
+      {defaultSeo.shareImage && (
         <>
-          <meta property="og:image" content={shareImage} />
-          <meta name="twitter:image" content={shareImage} />
-          <meta name="image" content={shareImage} />
+          <meta property="og:image" content={defaultSeo.shareImage} />
+          <meta name="twitter:image" content={defaultSeo.shareImage} />
+          <meta name="image" content={defaultSeo.shareImage} />
         </>
       )}
-      {seo.article && <meta property="og:type" content="article" />}
+      {fullSeo.article && <meta property="og:type" content="article" />}
       <meta name="twitter:card" content="summary_large_image" />
     </Head>
   )
