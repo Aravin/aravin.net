@@ -1,3 +1,4 @@
+/* eslint-disable react/no-string-refs */
 import App, { AppContext } from "next/app"
 import Head from "next/head"
 import "tailwindcss/tailwind.css"

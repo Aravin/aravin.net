@@ -8,7 +8,7 @@ import warrantyManagerImage from "../../public/projects/warranty-manager.jpg"
 
 const Home = () => {
   return (
-    <Layout seo={Seo}>
+    <Layout>
       {/* <Seo seo={homepage.seo} /> */}
       <div>
         <div className="text-center mt-10 mb-5">

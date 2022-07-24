@@ -29,7 +29,7 @@ const Home = ({ articles, categories, homepage }: any) => {
   }
 
   return (
-    <Layout seo={Seo}>
+    <Layout>
       {/* <Seo seo={homepage.seo} /> */}
       <Particles
         id="tsparticles"
