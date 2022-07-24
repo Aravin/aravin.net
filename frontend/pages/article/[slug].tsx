@@ -86,7 +86,9 @@ export async function getStaticPaths() {
   const articles = await fetchAPI("/articles")
 
   return {
-    paths: articles?.map((article: any) => article.attributes.slug),
+    paths: articles?.map(
+      (article: any) => "/article/" + article.attributes.slug
+    ),
     fallback: true, // todo: testing
   }
 }
