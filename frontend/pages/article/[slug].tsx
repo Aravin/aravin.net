@@ -22,9 +22,9 @@ const Article = ({ article, categories }: any) => {
   // const imageUrl = article.image && getStrapiMedia(article.image)
 
   const seo = {
-    metaTitle: article.title,
-    metaDescription: article.description,
-    shareImage: article.image,
+    metaTitle: article?.title,
+    metaDescription: article?.description,
+    shareImage: article?.image,
     article: true,
   }
 
