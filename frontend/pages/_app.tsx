@@ -2,13 +2,14 @@ import App, { AppContext } from "next/app"
 import Head from "next/head"
 import "tailwindcss/tailwind.css"
 import "../assets/css/style.css"
-import { createContext } from "react"
+import { createContext, useEffect } from "react"
 import { fetchAPI } from "../lib/api"
 import { getStrapiMedia } from "../lib/media"
 import type { AppProps /*, AppContext */ } from "next/app"
-import Router from "next/router"
+import Router, { useRouter } from "next/router"
 import NProgress from "nprogress" //nprogress module
 import "nprogress/nprogress.css" //styles of nprogress
+import * as ga from "../lib/gtag"
 
 // Binding events.
 Router.events.on("routeChangeStart", () => NProgress.start())
@@ -19,6 +20,22 @@ Router.events.on("routeChangeError", () => NProgress.done())
 export const GlobalContext = createContext({})
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
+  const router = useRouter()
+
+  useEffect(() => {
+    const handleRouteChange = (url: string) => {
+      ga.pageview(url)
+    }
+    //When the component is mounted, subscribe to router changes
+    //and log those page views
+    router.events.on("routeChangeComplete", handleRouteChange)
+
+    // If the component is unmounted, unsubscribe
+    // from the event with the `off` method
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange)
+    }
+  }, [router.events])
   const { global } = pageProps
 
   return (
