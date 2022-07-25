@@ -92,13 +92,15 @@ export async function getStaticPaths() {
         slug: article.attributes.slug,
       },
     })),
-    fallback: true, // false
+    fallback: false,
   }
 }
 
 export async function getStaticProps({ params }: any) {
   const articles = await fetchAPI(`/articles`, {
-    slug: params.slug,
+    filters: {
+      slug: params.slug,
+    },
     populate: "*",
   })
   const categories = await fetchAPI("/categories")
