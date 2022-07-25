@@ -13,7 +13,7 @@ import cs from "highlight.js/lib/languages/csharp"
 hljs.registerLanguage("javascript", javascript)
 hljs.registerLanguage("cs", cs)
 
-const Article = ({ article, categories }: any) => {
+const Article = ({ article }: any) => {
   useEffect(() => {
     hljs.highlightAll()
   }, [])
