@@ -98,9 +98,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }: any) {
   const articles = await fetchAPI(`/articles`, {
-    filters: {
-      slug: params.slug,
-    },
+    slug: params.slug,
     populate: "*",
   })
   const categories = await fetchAPI("/categories")
