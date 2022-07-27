@@ -3,7 +3,7 @@ import Link from 'next/link';
 import NextImage from './image';
 import moment from 'moment';
 
-const Card = ({ article }) => {
+const Card = ({ article }: any) => {
   return (
     <Link as={`/article/${article.attributes.slug}`} href="/article/[id]">
       <a>

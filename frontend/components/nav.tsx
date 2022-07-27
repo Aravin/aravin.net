@@ -16,11 +16,11 @@ const navigation = [
   { name: 'Blogs', href: '/articles', urlMatch: '/article', current: false },
 ];
 
-function classNames(...classes) {
+function classNames(...classes: string[]) {
   return classes.filter(String).join(' ');
 }
 
-const Nav = ({ categories }) => {
+const Nav = ({ categories }: any) => {
   const router = useRouter();
 
   return (
@@ -56,7 +56,7 @@ const Nav = ({ categories }) => {
                       >
                         <a
                           className={`${
-                            router.pathname.includes(item.urlMatch)
+                            router.pathname.includes(item.urlMatch || '')
                               ? 'bg-primary text-white '
                               : 'hover:bg-primary-focus hover:text-white '
                           }
@@ -91,7 +91,7 @@ const Nav = ({ categories }) => {
                 </Link>
               ))}
             </div>
-            <hr className></hr>
+            <hr />
           </Disclosure.Panel>
         </>
       )}
