@@ -7,7 +7,7 @@ export function getStrapiURL(path = '') {
 }
 
 // Helper to make GET requests to Strapi
-export async function fetchAPI(path, urlParamsObject = {}) {
+export async function fetchAPI(path: string, urlParamsObject = {}) {
   // Build request URL
   const queryString = qs.stringify(urlParamsObject);
   const requestUrl = `${getStrapiURL(
