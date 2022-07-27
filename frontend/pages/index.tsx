@@ -28,9 +28,13 @@ const Home = ({ articles, categories, homepage }: any) => {
     // console.log(container)
   }
 
+  const seo = {
+    metaTitle: "Home - A technology blog.",
+  }
+
   return (
     <Layout>
-      {/* <Seo seo={homepage.seo} /> */}
+      <Seo seo={seo} />
       <Particles
         id="tsparticles"
         init={particlesInit}

@@ -7,9 +7,13 @@ import sipCalculatorImage from "../../public/projects/sip-calculator.png"
 import warrantyManagerImage from "../../public/projects/warranty-manager.jpg"
 
 const Home = () => {
+  const seo = {
+    metaTitle: "Portfolios",
+  }
+
   return (
     <Layout>
-      {/* <Seo seo={homepage.seo} /> */}
+      <Seo seo={seo} />
       <div>
         <div className="text-center mt-10 mb-5">
           <h2 className="text-3xl font-bold">Projects</h2>

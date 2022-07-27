@@ -16,7 +16,7 @@ const Article = ({ articles }: any) => {
   }, [])
 
   const seo = {
-    metaTitle: "Aravin.net Blog",
+    metaTitle: "Articles",
     // metaDescription: article.description,
     // shareImage: article.image,
     article: true,
@@ -24,9 +24,8 @@ const Article = ({ articles }: any) => {
 
   return (
     <Layout>
-      <div className="">
-        <Articles articles={articles} limit={10} />
-      </div>
+      <Seo seo={seo} />
+      <Articles articles={articles} limit={10} />
     </Layout>
   )
 }
