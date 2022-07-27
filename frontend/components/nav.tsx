@@ -55,11 +55,10 @@ const Nav = ({ categories }: any) => {
                         aria-current={item.current ? 'page' : undefined}
                       >
                         <a
-                          className={`${
-                            router.pathname.includes(item.urlMatch || '')
-                              ? 'bg-primary text-white '
-                              : 'hover:bg-primary-focus hover:text-white '
-                          }
+                          className={`${router.pathname.includes(item.urlMatch || '')
+                            ? 'bg-primary text-white '
+                            : 'hover:bg-primary-focus hover:text-white '
+                            }
                         px-3 py-2 rounded-md text-sm font-medium`}
                         >
                           {item.name}
@@ -76,19 +75,19 @@ const Nav = ({ categories }: any) => {
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className={classNames(
-                    item.current
-                      ? 'bg-primary text-white'
-                      : 'text-gray-500 hover:bg-primary-focus hover:text-white',
-                    'block px-3 py-2 rounded-md text-base font-medium'
-                  )}
-                  aria-current={item.current ? 'page' : undefined}
-                >
-                  {item.name}
-                </Link>
+                <span key={item.name} className={classNames(
+                  item.current
+                    ? 'bg-primary text-white'
+                    : 'text-gray-500 hover:bg-primary-focus hover:text-white',
+                  'block px-3 py-2 rounded-md text-base font-medium'
+                )}>
+                  <Link
+                    href={item.href}
+                    aria-current={item.current ? 'page' : undefined}>
+                    {item.name}
+                  </Link>
+                </span>
+
               ))}
             </div>
             <hr />

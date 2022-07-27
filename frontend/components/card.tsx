@@ -29,7 +29,7 @@ const Card = ({ article }: any) => {
                 {article.attributes.tags.data.length > 0 && (
                   <p>
                     <span className="font-bold">Tags </span>
-                    {article.attributes.tags.data?.map((_) => {
+                    {article.attributes.tags.data?.map((_: any) => {
                       return (
                         <span
                           key={_.attributes.color}
