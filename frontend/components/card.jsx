@@ -1,7 +1,7 @@
-import React, { useEffect } from "react"
-import Link from "next/link"
-import NextImage from "./image"
-import moment from "moment"
+import React, { useEffect } from 'react';
+import Link from 'next/link';
+import NextImage from './image';
+import moment from 'moment';
 
 const Card = ({ article }) => {
   return (
@@ -12,7 +12,7 @@ const Card = ({ article }) => {
             <h2 className="card-title">{article.attributes.title}</h2>
 
             <p>
-              <span>- Aravind Appadurai </span> on{" "}
+              <span>- Aravind Appadurai </span> on{' '}
               {moment(article.attributes.created_at).fromNow()}
             </p>
 
@@ -33,14 +33,14 @@ const Card = ({ article }) => {
                       return (
                         <span
                           key={_.attributes.color}
-                          className={"badge ml-1"}
+                          className={'badge ml-1'}
                           style={
                             _.attributes.color && {
                               backgroundColor: _.attributes.color,
                             }
                           }
                         >{`#${_.attributes.slug}`}</span>
-                      )
+                      );
                     })}
                   </p>
                 )}
@@ -51,7 +51,7 @@ const Card = ({ article }) => {
         </div>
       </a>
     </Link>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;

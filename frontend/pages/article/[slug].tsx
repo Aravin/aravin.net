@@ -1,22 +1,22 @@
-import React, { useEffect } from "react"
-import ReactMarkdown from "react-markdown"
-import rehypeRaw from "rehype-raw"
-import Moment from "react-moment"
-import { fetchAPI } from "../../lib/api"
-import Layout from "../../components/layout"
-import Image from "next/image"
-import Seo from "../../components/seo"
-import hljs from "highlight.js/lib/common"
-import "highlight.js/styles/atom-one-dark.css"
-import javascript from "highlight.js/lib/languages/javascript"
-import cs from "highlight.js/lib/languages/csharp"
-hljs.registerLanguage("javascript", javascript)
-hljs.registerLanguage("cs", cs)
+import React, { useEffect } from 'react';
+import ReactMarkdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
+import Moment from 'react-moment';
+import { fetchAPI } from '../../lib/api';
+import Layout from '../../components/layout';
+import Image from 'next/image';
+import Seo from '../../components/seo';
+import hljs from 'highlight.js/lib/common';
+import 'highlight.js/styles/atom-one-dark.css';
+import javascript from 'highlight.js/lib/languages/javascript';
+import cs from 'highlight.js/lib/languages/csharp';
+hljs.registerLanguage('javascript', javascript);
+hljs.registerLanguage('cs', cs);
 
 const Article = ({ article }: any) => {
   useEffect(() => {
-    hljs.highlightAll()
-  }, [])
+    hljs.highlightAll();
+  }, []);
 
   // const imageUrl = article.image && getStrapiMedia(article.image)
 
@@ -25,7 +25,7 @@ const Article = ({ article }: any) => {
     metaDescription: article?.description,
     shareImage: article?.image,
     article: true,
-  }
+  };
 
   return (
     <Layout>
@@ -78,11 +78,11 @@ const Article = ({ article }: any) => {
         </div>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
 export async function getStaticPaths() {
-  const articles = await fetchAPI("/articles", { fields: "slug" })
+  const articles = await fetchAPI('/articles', { fields: 'slug' });
 
   return {
     paths: articles.data?.map((article: any) => ({
@@ -91,17 +91,17 @@ export async function getStaticPaths() {
       },
     })),
     fallback: false,
-  }
+  };
 }
 
 export async function getStaticProps({ params }: any) {
-  const articles = await fetchAPI(`/articles`, {
+  const articles = await fetchAPI('/articles', {
     filters: {
       slug: params.slug,
     },
-    populate: "*",
-  })
-  const categories = await fetchAPI("/categories")
+    populate: '*',
+  });
+  const categories = await fetchAPI('/categories');
 
   return {
     props: {
@@ -109,7 +109,7 @@ export async function getStaticProps({ params }: any) {
       categories: categories.data,
     },
     revalidate: 1,
-  }
+  };
 }
 
-export default Article
+export default Article;

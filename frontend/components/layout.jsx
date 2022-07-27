@@ -1,4 +1,4 @@
-import Nav from "./nav"
+import Nav from './nav';
 
 const Layout = ({ children }) => (
   <div>
@@ -118,6 +118,6 @@ const Layout = ({ children }) => (
       </div>
     </section>
   </div>
-)
+);
 
-export default Layout
+export default Layout;

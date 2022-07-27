@@ -1,10 +1,10 @@
-import React from "react"
-import Articles from "../components/articles"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-import { fetchAPI } from "../lib/api"
-import Image from "next/image"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import React from 'react';
+import Articles from '../components/articles';
+import Layout from '../components/layout';
+import Seo from '../components/seo';
+import { fetchAPI } from '../lib/api';
+import Image from 'next/image';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faGithub,
   faStackOverflow,
@@ -12,25 +12,25 @@ import {
   faGoogle,
   faTwitter,
   faFacebook,
-} from "@fortawesome/free-brands-svg-icons"
-import emiCalculatorImage from "../public/projects/emi-calculator.png"
-import sipCalculatorImage from "../public/projects/sip-calculator.png"
-import warrantyManagerImage from "../public/projects/warranty-manager.jpg"
-import Particles from "react-tsparticles"
+} from '@fortawesome/free-brands-svg-icons';
+import emiCalculatorImage from '../public/projects/emi-calculator.png';
+import sipCalculatorImage from '../public/projects/sip-calculator.png';
+import warrantyManagerImage from '../public/projects/warranty-manager.jpg';
+import Particles from 'react-tsparticles';
 
 const Home = ({ articles, categories, homepage }: any) => {
   const particlesInit = (main: any) => {
     // console.log(main)
     // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
-  }
+  };
 
   const particlesLoaded = (container: any) => {
     // console.log(container)
-  }
+  };
 
   const seo = {
-    metaTitle: "Home - A technology blog.",
-  }
+    metaTitle: 'Home - A technology blog.',
+  };
 
   return (
     <Layout>
@@ -46,11 +46,11 @@ const Home = ({ articles, categories, homepage }: any) => {
             events: {
               onClick: {
                 enable: true,
-                mode: "push",
+                mode: 'push',
               },
               onHover: {
                 enable: true,
-                mode: "repulse",
+                mode: 'repulse',
               },
               resize: true,
             },
@@ -78,10 +78,10 @@ const Home = ({ articles, categories, homepage }: any) => {
           },
           particles: {
             color: {
-              value: "rgb(33, 201, 84)",
+              value: 'rgb(33, 201, 84)',
             },
             links: {
-              color: "rgb(33, 201, 84)",
+              color: 'rgb(33, 201, 84)',
               distance: 150,
               enable: true,
               opacity: 0.5,
@@ -91,9 +91,9 @@ const Home = ({ articles, categories, homepage }: any) => {
               enable: true,
             },
             move: {
-              direction: "none",
+              direction: 'none',
               enable: true,
-              outMode: "bounce",
+              outMode: 'bounce',
               random: false,
               speed: 2,
               straight: false,
@@ -109,7 +109,7 @@ const Home = ({ articles, categories, homepage }: any) => {
               value: 0.5,
             },
             shape: {
-              type: "circle",
+              type: 'circle',
             },
             size: {
               random: true,
@@ -429,21 +429,21 @@ const Home = ({ articles, categories, homepage }: any) => {
         </div>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
 export async function getStaticProps() {
   // Run API calls in parallel
   const [articles, categories] = await Promise.all([
-    fetchAPI("/articles", { populate: "*" }),
-    fetchAPI("/categories", { populate: "*" }),
+    fetchAPI('/articles', { populate: '*' }),
+    fetchAPI('/categories', { populate: '*' }),
     // fetchAPI("/homepage"),
-  ])
+  ]);
 
   return {
     props: { articles: articles.data, categories: categories.data },
     revalidate: 1,
-  }
+  };
 }
 
-export default Home
+export default Home;

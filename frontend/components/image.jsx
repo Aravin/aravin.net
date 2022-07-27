@@ -1,8 +1,8 @@
-import { getStrapiMedia } from "../lib/media"
-import NextImage from "next/image"
+import { getStrapiMedia } from '../lib/media';
+import NextImage from 'next/image';
 
 const Image = ({ image }) => {
-  const { url, alternativeText, width, height } = image.data.attributes
+  const { url, alternativeText, width, height } = image.data.attributes;
 
   // const loader = () => {
   //   return getStrapiMedia(image)
@@ -10,15 +10,15 @@ const Image = ({ image }) => {
 
   return (
     <NextImage
-      loader={loader}
+      // loader={loader}
       layout="responsive"
-      wwidth={width || "100%"}
-      height={height || "100%"}
+      wwidth={width || '100%'}
+      height={height || '100%'}
       oobjectFit="contain"
       src={getStrapiMedia(image)}
-      alt={alternativeText || ""}
+      alt={alternativeText || ''}
     />
-  )
-}
+  );
+};
 
-export default Image
+export default Image;

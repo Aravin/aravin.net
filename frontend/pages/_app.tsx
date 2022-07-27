@@ -1,44 +1,44 @@
 /* eslint-disable react/no-string-refs */
-import App, { AppContext } from "next/app"
-import Head from "next/head"
-import "tailwindcss/tailwind.css"
-import "../assets/css/style.css"
-import { createContext, useEffect } from "react"
-import { fetchAPI } from "../lib/api"
-import { getStrapiMedia } from "../lib/media"
-import type { AppProps /*, AppContext */ } from "next/app"
-import Router, { useRouter } from "next/router"
-import NProgress from "nprogress" //nprogress module
-import "nprogress/nprogress.css" //styles of nprogress
-import Script from "next/script"
-import * as ga from "../lib/gtag"
+import App, { AppContext } from 'next/app';
+import Head from 'next/head';
+import 'tailwindcss/tailwind.css';
+import '../assets/css/style.css';
+import { createContext, useEffect } from 'react';
+import { fetchAPI } from '../lib/api';
+import { getStrapiMedia } from '../lib/media';
+import type { AppProps /*, AppContext */ } from 'next/app';
+import Router, { useRouter } from 'next/router';
+import NProgress from 'nprogress'; //nprogress module
+import 'nprogress/nprogress.css'; //styles of nprogress
+import Script from 'next/script';
+import * as ga from '../lib/gtag';
 
 // Binding events.
-Router.events.on("routeChangeStart", () => NProgress.start())
-Router.events.on("routeChangeComplete", () => NProgress.done())
-Router.events.on("routeChangeError", () => NProgress.done())
+Router.events.on('routeChangeStart', () => NProgress.start());
+Router.events.on('routeChangeComplete', () => NProgress.done());
+Router.events.on('routeChangeError', () => NProgress.done());
 
 // Store Strapi Global object in context
-export const GlobalContext = createContext({})
+export const GlobalContext = createContext({});
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
-  const router = useRouter()
+  const router = useRouter();
 
   useEffect(() => {
     const handleRouteChange = (url: string) => {
-      ga.pageview(url)
-    }
+      ga.pageview(url);
+    };
     //When the component is mounted, subscribe to router changes
     //and log those page views
-    router.events.on("routeChangeComplete", handleRouteChange)
+    router.events.on('routeChangeComplete', handleRouteChange);
 
     // If the component is unmounted, unsubscribe
     // from the event with the `off` method
     return () => {
-      router.events.off("routeChangeComplete", handleRouteChange)
-    }
-  }, [router.events])
-  const { global } = pageProps
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
+  const { global } = pageProps;
 
   return (
     <>
@@ -47,7 +47,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
       />
 
-      <Script strategy="lazyOnload" id={"gtag"}>
+      <Script strategy="lazyOnload" id={'gtag'}>
         {`
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -68,8 +68,8 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <Component {...pageProps} />
       </GlobalContext.Provider>
     </>
-  )
-}
+  );
+};
 
 // getInitialProps disables automatic static optimization for pages that don't
 // have getStaticProps. So article, category and home pages still get SSG.
@@ -77,19 +77,19 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 // https://github.com/vercel/next.js/discussions/10949
 MyApp.getInitialProps = async (ctx: AppContext) => {
   // Calls page's `getInitialProps` and fills `appProps.pageProps`
-  const appProps = await App.getInitialProps(ctx)
+  const appProps = await App.getInitialProps(ctx);
   // Fetch global site settings from Strapi
-  const global = await fetchAPI("/global", {
+  const global = await fetchAPI('/global', {
     populate: {
-      favicon: "*",
+      favicon: '*',
       defaultSeo: {
-        populate: "*",
+        populate: '*',
       },
     },
-  })
+  });
 
   // Pass the data to our page via props
-  return { ...appProps, pageProps: { global: global.data } }
-}
+  return { ...appProps, pageProps: { global: global.data } };
+};
 
-export default MyApp
+export default MyApp;

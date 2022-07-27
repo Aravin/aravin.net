@@ -11,6 +11,13 @@
   "plugins": [
     "@typescript-eslint"
   ],
-  "rules": {},
-  "extends": [ "eslint:recommended", "plugin:@typescript-eslint/recommended", "next/core-web-vitals"]
+  "rules": {
+    "quotes": [2, "single", { "avoidEscape": true }],
+    "semi": [2, "always"]
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "next/core-web-vitals"
+  ]
 }

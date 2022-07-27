@@ -1,15 +1,15 @@
-import React from "react"
-import Image from "next/image"
-import Layout from "../../components/layout"
-import Seo from "../../components/seo"
-import emiCalculatorImage from "../../public/projects/emi-calculator.png"
-import sipCalculatorImage from "../../public/projects/sip-calculator.png"
-import warrantyManagerImage from "../../public/projects/warranty-manager.jpg"
+import React from 'react';
+import Image from 'next/image';
+import Layout from '../../components/layout';
+import Seo from '../../components/seo';
+import emiCalculatorImage from '../../public/projects/emi-calculator.png';
+import sipCalculatorImage from '../../public/projects/sip-calculator.png';
+import warrantyManagerImage from '../../public/projects/warranty-manager.jpg';
 
 const Home = () => {
   const seo = {
-    metaTitle: "Portfolios",
-  }
+    metaTitle: 'Portfolios',
+  };
 
   return (
     <Layout>
@@ -215,7 +215,7 @@ const Home = () => {
         </div>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

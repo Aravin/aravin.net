@@ -1,34 +1,34 @@
-import React, { useEffect } from "react"
-import { fetchAPI } from "../lib/api"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-import hljs from "highlight.js/lib/common"
-import "highlight.js/styles/atom-one-dark.css"
-import javascript from "highlight.js/lib/languages/javascript"
-import cs from "highlight.js/lib/languages/csharp"
-import Articles from "../components/articles"
-hljs.registerLanguage("javascript", javascript)
-hljs.registerLanguage("cs", cs)
+import React, { useEffect } from 'react';
+import { fetchAPI } from '../lib/api';
+import Layout from '../components/layout';
+import Seo from '../components/seo';
+import hljs from 'highlight.js/lib/common';
+import 'highlight.js/styles/atom-one-dark.css';
+import javascript from 'highlight.js/lib/languages/javascript';
+import cs from 'highlight.js/lib/languages/csharp';
+import Articles from '../components/articles';
+hljs.registerLanguage('javascript', javascript);
+hljs.registerLanguage('cs', cs);
 
 const Article = ({ articles }: any) => {
   useEffect(() => {
-    hljs.highlightAll()
-  }, [])
+    hljs.highlightAll();
+  }, []);
 
   const seo = {
-    metaTitle: "Articles",
+    metaTitle: 'Articles',
     // metaDescription: article.description,
     // shareImage: article.image,
     article: true,
-  }
+  };
 
   return (
     <Layout>
       <Seo seo={seo} />
       <Articles articles={articles} limit={10} />
     </Layout>
-  )
-}
+  );
+};
 
 // export async function getStaticPaths() {
 //   const articles = await fetchAPI("/articles")
@@ -44,14 +44,14 @@ const Article = ({ articles }: any) => {
 // }
 
 export async function getStaticProps({ params }: any) {
-  const articles = await fetchAPI(`/articles`, { populate: "*" })
+  const articles = await fetchAPI('/articles', { populate: '*' });
 
   return {
     props: {
       articles: articles.data,
     },
     revalidate: 1,
-  }
+  };
 }
 
-export default Article
+export default Article;

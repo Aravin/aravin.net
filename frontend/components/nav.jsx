@@ -1,9 +1,9 @@
-import React from "react"
-import Link from "next/link"
-import { Fragment } from "react"
-import { Disclosure, Menu, Transition } from "@headlessui/react"
-import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline"
-import { useRouter } from "next/router"
+import React from 'react';
+import Link from 'next/link';
+import { Fragment } from 'react';
+import { Disclosure, Menu, Transition } from '@headlessui/react';
+import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
+import { useRouter } from 'next/router';
 
 const navigation = [
   // {
@@ -12,16 +12,16 @@ const navigation = [
   //   current: false,
   // },
   // { name: "Algorithms", href: "/category/algorithms", current: false },
-  { name: "Portfolios", href: "/portfolios", current: false },
-  { name: "Blogs", href: "/articles", urlMatch: "/article", current: false },
-]
+  { name: 'Portfolios', href: '/portfolios', current: false },
+  { name: 'Blogs', href: '/articles', urlMatch: '/article', current: false },
+];
 
 function classNames(...classes) {
-  return classes.filter(String).join(" ")
+  return classes.filter(String).join(' ');
 }
 
 const Nav = ({ categories }) => {
-  const router = useRouter()
+  const router = useRouter();
 
   return (
     <Disclosure as="nav" className="bg-base-100 fixed w-full z-10 top-0">
@@ -52,13 +52,13 @@ const Nav = ({ categories }) => {
                       <Link
                         key={item.name}
                         href={item.href}
-                        aria-current={item.current ? "page" : undefined}
+                        aria-current={item.current ? 'page' : undefined}
                       >
                         <a
                           className={`${
                             router.pathname.includes(item.urlMatch)
-                              ? "bg-primary text-white "
-                              : "hover:bg-primary-focus hover:text-white "
+                              ? 'bg-primary text-white '
+                              : 'hover:bg-primary-focus hover:text-white '
                           }
                         px-3 py-2 rounded-md text-sm font-medium`}
                         >
@@ -81,11 +81,11 @@ const Nav = ({ categories }) => {
                   href={item.href}
                   className={classNames(
                     item.current
-                      ? "bg-primary text-white"
-                      : "text-gray-500 hover:bg-primary-focus hover:text-white",
-                    "block px-3 py-2 rounded-md text-base font-medium"
+                      ? 'bg-primary text-white'
+                      : 'text-gray-500 hover:bg-primary-focus hover:text-white',
+                    'block px-3 py-2 rounded-md text-base font-medium'
                   )}
-                  aria-current={item.current ? "page" : undefined}
+                  aria-current={item.current ? 'page' : undefined}
                 >
                   {item.name}
                 </Link>
@@ -96,7 +96,7 @@ const Nav = ({ categories }) => {
         </>
       )}
     </Disclosure>
-  )
-}
+  );
+};
 
-export default Nav
+export default Nav;
