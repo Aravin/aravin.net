@@ -19,7 +19,7 @@ import warrantyManagerImage from '../public/projects/warranty-manager.jpg';
 import Particles from 'react-tsparticles';
 
 const Home = ({ articles, categories, homepage }: any) => {
-  const particlesInit = (main: any) => {
+  const particlesInit = (engine: any) => {
     // console.log(main)
     // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
   };
@@ -37,8 +37,8 @@ const Home = ({ articles, categories, homepage }: any) => {
       <Seo seo={seo} />
       <Particles
         id="tsparticles"
-        init={particlesInit}
-        loaded={particlesLoaded}
+        init={particlesInit as any}
+        loaded={particlesLoaded as any}
         options={{
           background: {},
           fpsLimit: 60,
