@@ -44,14 +44,22 @@ const Article = ({ articles }: any) => {
 // }
 
 export async function getStaticProps({ params }: any) {
-  const articles = await fetchAPI('/articles', { populate: '*' });
+  try {
+    const articles = await fetchAPI('/articles', { populate: '*' });
 
-  return {
-    props: {
-      articles: articles.data,
-    },
-    revalidate: 1,
-  };
+    return {
+      props: {
+        articles: articles.data,
+      },
+      revalidate: 1,
+    };
+
+  } catch (err) {
+    console.log(err);
+    return {
+      notFound: true,
+    };
+  }
 }
 
 export default Article;
