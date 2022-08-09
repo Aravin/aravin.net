@@ -81,7 +81,7 @@ const Article = ({ article }: any) => {
   );
 };
 
-export async function getServerSideProps() {
+export async function getStaticPaths() {
   const articles = await fetchAPI('/articles', { fields: 'slug' });
 
   return {
@@ -94,22 +94,22 @@ export async function getServerSideProps() {
   };
 }
 
-// export async function getStaticProps({ params }: any) {
-//   const articles = await fetchAPI('/articles', {
-//     filters: {
-//       slug: params.slug,
-//     },
-//     populate: '*',
-//   });
-//   const categories = await fetchAPI('/categories');
+export async function getStaticProps({ params }: any) {
+  const articles = await fetchAPI('/articles', {
+    filters: {
+      slug: params.slug,
+    },
+    populate: '*',
+  });
+  const categories = await fetchAPI('/categories');
 
-//   return {
-//     props: {
-//       article: articles.data[0].attributes,
-//       categories: categories.data,
-//     },
-//     revalidate: 1,
-//   };
-// }
+  return {
+    props: {
+      article: articles.data[0].attributes,
+      categories: categories.data,
+    },
+    revalidate: 1,
+  };
+}
 
 export default Article;
