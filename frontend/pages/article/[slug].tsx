@@ -81,7 +81,7 @@ const Article = ({ article }: any) => {
   );
 };
 
-export async function getStaticPaths() {
+export async function getServerSideProps() {
   const articles = await fetchAPI('/articles', { fields: 'slug' });
 
   return {
