@@ -7,14 +7,16 @@
     "develop": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "gcp-build": "strapi build",
+    "deploy": "gcloud app deploy app.yaml --project aravin-net"
   },
   "devDependencies": {},
   "dependencies": {
-    "@strapi/plugin-i18n": "4.2.3",
-    "@strapi/plugin-users-permissions": "4.2.3",
-    "@strapi/provider-upload-aws-s3": "^4.2.3",
-    "@strapi/strapi": "4.2.3",
+    "@strapi/plugin-i18n": "4.4.5",
+    "@strapi/plugin-users-permissions": "4.4.5",
+    "@strapi/provider-upload-aws-s3": "^4.4.5",
+    "@strapi/strapi": "4.4.5",
     "pg": "8.6.0"
   },
   "author": {
