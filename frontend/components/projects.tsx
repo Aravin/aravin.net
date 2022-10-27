@@ -8,7 +8,7 @@ import Image from 'next/image';
 export const Projects = () => {
   return <>
     <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 place-items-center place-self-stretch">
-      <div className="card compact text-center shadow-2xl p-5 rounded border-2 hover:border-primary-focus bg-white">
+      <div className="card compact text-center shadow-2xl p-8 rounded border-2 hover:border-primary-focus bg-white">
         <figure className="relative p-5 mb-5 w-80 h-40 self-center">
           <Image
             layout="fill"
@@ -31,7 +31,7 @@ export const Projects = () => {
               ServiceBird.in
             </a>
           </h2>
-          <p>Local Home Appliance Service Company in Chennai</p>
+          <p className="p-4">Local Home Appliance Service Company in Chennai</p>
           <div className="justify-center card-actions">
             <div>
               <div className="badge badge-primary m-2">Next.js</div>
@@ -43,7 +43,7 @@ export const Projects = () => {
           </div>
         </div>
       </div>
-      <div className="card compact text-center shadow-2xl p-5 rounded border-2 hover:border-primary-focus bg-white">
+      <div className="card compact text-center shadow-2xl p-8 rounded border-2 hover:border-primary-focus bg-white">
         <figure className="relative p-5 mb-5 w-80 h-40 self-center">
           <Image
             layout="fill"
@@ -66,7 +66,7 @@ export const Projects = () => {
               epix.io
             </a>
           </h2>
-          <p>
+          <p className="p-4">
             Upcoming open source project with everyday tools and services
           </p>
           <div className="justify-center card-actions">
@@ -79,7 +79,7 @@ export const Projects = () => {
           </div>
         </div>
       </div>
-      <div className="card compact text-center shadow-2xl p-5 rounded border-2 hover:border-primary-focus bg-white">
+      <div className="card compact text-center shadow-2xl p-8 rounded border-2 hover:border-primary-focus bg-white">
         <figure className="relative p-5 mb-5 w-80 h-40 self-center">
           <Image
             layout="fill"
@@ -102,7 +102,7 @@ export const Projects = () => {
               FrontlineCourier.com
             </a>
           </h2>
-          <p>
+          <p className="p-4">
             Courier company website with client and admin portal with
             end-to-end solution from booking to tracking the courier.
           </p>
@@ -115,7 +115,7 @@ export const Projects = () => {
           </div>
         </div>
       </div>
-      <div className="card compact text-center shadow-2xl p-5 rounded border-2 hover:border-primary-focus bg-white">
+      <div className="card compact text-center shadow-2xl p-8 rounded border-2 hover:border-primary-focus bg-white">
         <figure className="relative p-5 mb-5 w-40 h-40 self-center">
           <Image
             src={sipCalculatorImage}
@@ -138,7 +138,7 @@ export const Projects = () => {
               SIP Calculator
             </a>
           </h2>
-          <p>SIP, SWP, STP and Lumpsum returns Calculator Android App</p>
+          <p className="p-4">SIP, SWP, STP and Lumpsum returns Calculator Android App</p>
           <div className="justify-center card-actions">
             <div>
               <div className="badge badge-primary m-2">Flutter</div>
@@ -147,7 +147,7 @@ export const Projects = () => {
           </div>
         </div>
       </div>
-      <div className="card compact text-center shadow-2xl p-5 rounded border-2 hover:border-primary-focus bg-white">
+      <div className="card compact text-center shadow-2xl p-8 rounded border-2 hover:border-primary-focus bg-white">
         <figure className="relative p-5 mb-5 w-40 h-40 self-center">
           <Image
             src={warrantyManagerImage}
@@ -170,7 +170,7 @@ export const Projects = () => {
               Warranty Manager
             </a>
           </h2>
-          <p>
+          <p className="p-4">
             Android application to manage your product or service warranty
           </p>
           <div className="justify-center card-actions">
@@ -181,7 +181,7 @@ export const Projects = () => {
           </div>
         </div>
       </div>
-      <div className="card compact text-center shadow-2xl p-5 rounded border-2 hover:border-primary-focus bg-white">
+      <div className="card compact text-center shadow-2xl p-8 rounded border-2 hover:border-primary-focus bg-white">
         <figure className="relative p-5 mb-5 w-40 h-40 self-center">
           <Image
             src={emiCalculatorImage}
@@ -204,7 +204,7 @@ export const Projects = () => {
               EMI Calculator
             </a>
           </h2>
-          <p>
+          <p className="p-4">
             Android application to calculate the Loan EMI and Compare
             Loans
           </p>
