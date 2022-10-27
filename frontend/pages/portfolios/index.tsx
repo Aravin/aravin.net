@@ -5,6 +5,8 @@ import Seo from '../../components/seo';
 import emiCalculatorImage from '../../public/projects/emi-calculator.png';
 import sipCalculatorImage from '../../public/projects/sip-calculator.png';
 import warrantyManagerImage from '../../public/projects/warranty-manager.jpg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLink } from '@fortawesome/free-solid-svg-icons';
 
 const Home = () => {
   const seo = {
@@ -22,13 +24,11 @@ const Home = () => {
         <div className="px-5 py-5 mb-5 w-full">
           <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 place-items-center place-self-stretch">
             <div className="card compact text-center shadow-2xl p-5 rounded border-2 hover:border-primary-focus bg-white">
-              <figure className="px-5 pt-5">
+              <figure className="relative px-5 pt-5 w-80 h-40 self-center">
                 <Image
-                  width="400"
-                  height="250"
-                  layout="responsive"
+                  layout="fill"
                   src="/projects/servicebird.png"
-                  className=""
+
                   alt="servicebird.in"
                 />
               </figure>
@@ -39,6 +39,11 @@ const Home = () => {
                     target="_blank"
                     rel="noreferrer"
                   >
+                    <FontAwesomeIcon
+                      icon={faLink}
+                      size="xs"
+                      className="w-10 mr-2 inline text-primary"
+                    />
                     ServiceBird.in
                   </a>
                 </h2>
@@ -55,13 +60,11 @@ const Home = () => {
               </div>
             </div>
             <div className="card compact text-center shadow-2xl p-5 rounded border-2 hover:border-primary-focus bg-white">
-              <figure className="px-5 pt-5">
+              <figure className="relative px-5 pt-5 w-80 h-40 self-center">
                 <Image
-                  width="400"
-                  height="250"
-                  layout="responsive"
+                  layout="fill"
                   src="/projects/epix.io.png"
-                  className=""
+
                   alt="epix.io Project"
                 />
               </figure>
@@ -89,13 +92,11 @@ const Home = () => {
               </div>
             </div>
             <div className="card compact text-center shadow-2xl p-5 rounded border-2 hover:border-primary-focus bg-white">
-              <figure className="px-5 pt-5">
+              <figure className="relative px-5 pt-5 w-80 h-40 self-center">
                 <Image
-                  width="400"
-                  height="250"
-                  layout="responsive"
+                  layout="fill"
                   src="/projects/frontline-courier.png"
-                  className=""
+
                   alt="epix.io Project"
                 />
               </figure>
@@ -123,11 +124,10 @@ const Home = () => {
               </div>
             </div>
             <div className="card compact text-center shadow-2xl p-5 rounded border-2 hover:border-primary-focus bg-white">
-              <figure className="px-5 pt-5">
+              <figure className="relative px-5 pt-5 w-40 h-40 self-center">
                 <Image
                   src={sipCalculatorImage}
-                  layout="responsive"
-                  className=""
+                  layout="fill"
                   alt="epix.io Project"
                 />
               </figure>
@@ -151,11 +151,10 @@ const Home = () => {
               </div>
             </div>
             <div className="card compact text-center shadow-2xl p-5 rounded border-2 hover:border-primary-focus bg-white">
-              <figure className="px-5 pt-5">
+              <figure className="relative px-5 pt-5 w-40 h-40 self-center">
                 <Image
                   src={warrantyManagerImage}
-                  layout="responsive"
-                  className=""
+                  layout="fill"
                   alt="epix.io Project"
                 />
               </figure>
@@ -181,11 +180,10 @@ const Home = () => {
               </div>
             </div>
             <div className="card compact text-center shadow-2xl p-5 rounded border-2 hover:border-primary-focus bg-white">
-              <figure className="px-5 pt-5">
+              <figure className="relative px-5 pt-5 w-40 h-40 self-center">
                 <Image
                   src={emiCalculatorImage}
-                  layout="responsive"
-                  className=""
+                  layout="fill"
                   alt="epix.io Project"
                 />
               </figure>
