@@ -6,7 +6,6 @@ import '../assets/css/style.css';
 import { createContext, useEffect } from 'react';
 import { fetchAPI } from '../lib/api';
 import { getStrapiMedia } from '../lib/media';
-import type { AppProps /*, AppContext */ } from 'next/app';
 import Router, { useRouter } from 'next/router';
 import NProgress from 'nprogress'; //nprogress module
 import 'nprogress/nprogress.css'; //styles of nprogress
@@ -21,7 +20,8 @@ Router.events.on('routeChangeError', () => NProgress.done());
 // Store Strapi Global object in context
 export const GlobalContext = createContext({});
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
+const MyApp = ({ Component, pageProps }: any) => {
+  const { global } = pageProps;
   const router = useRouter();
 
   useEffect(() => {
@@ -38,7 +38,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       router.events.off('routeChangeComplete', handleRouteChange);
     };
   }, [router.events]);
-  const { global } = pageProps;
 
   return (
     <>
