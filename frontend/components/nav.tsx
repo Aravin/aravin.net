@@ -12,7 +12,7 @@ const navigation = [
   //   current: false,
   // },
   // { name: "Algorithms", href: "/category/algorithms", current: false },
-  { name: 'Portfolios', href: '/portfolios', current: false },
+  { name: 'Portfolios', href: '/portfolios', urlMatch: '/portfolios', current: false },
   { name: 'Blogs', href: '/articles', urlMatch: '/article', current: false },
 ];
 

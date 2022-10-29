@@ -13,7 +13,7 @@ const Card = ({ article }: any) => {
 
             <p>
               <span>- Aravind Appadurai </span> on{' '}
-              {moment(article.attributes.created_at).fromNow()}
+              {moment(article.attributes.createdAt).fromNow()}
             </p>
 
             <div className="flex mt-2">

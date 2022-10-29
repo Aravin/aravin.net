@@ -14,6 +14,7 @@ hljs.registerLanguage('javascript', javascript);
 hljs.registerLanguage('cs', cs);
 
 const Article = ({ article }: any) => {
+
   useEffect(() => {
     hljs.highlightAll();
   }, []);
@@ -69,7 +70,7 @@ const Article = ({ article }: any) => {
                   />
                 </div>
               </div>
-              <p>{article.author.data.attributes.username}</p>
+              <p>{article.author.data.attributes.firstname}</p>
               <p>
                 <Moment format="MMM Do YYYY">{article.published_at}</Moment>
               </p>
@@ -82,7 +83,7 @@ const Article = ({ article }: any) => {
 };
 
 export async function getStaticPaths() {
-  const articles = await fetchAPI('/articles', { fields: 'slug' });
+  const articles = await fetchAPI('/articles', { fields: ['slug'] });
 
   return {
     paths: articles.data?.map((article: any) => ({

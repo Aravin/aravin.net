@@ -26,7 +26,7 @@
     },
     "slug": {
       "type": "uid",
-      "required": true,
+      "required": false,
       "targetField": "title"
     },
     "image": {
