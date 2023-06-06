@@ -6,7 +6,6 @@ import moment from 'moment';
 const Card = ({ article }: any) => {
   return (
     <Link as={`/article/${article.attributes.slug}`} href="/article/[id]">
-      <a>
         <div className="card bg-white mb-5 rounded border-2 hover:border-primary-focus prose-md">
           <div className="card-body">
             <h2 className="card-title">{article.attributes.title}</h2>
@@ -49,7 +48,6 @@ const Card = ({ article }: any) => {
             {/* <p><span className="font-semibold">Tags</span> {article.tags.reduce((_m __))}</p> */}
           </div>
         </div>
-      </a>
     </Link>
   );
 };

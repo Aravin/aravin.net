@@ -53,16 +53,13 @@ const Nav = ({ categories }: any) => {
                         key={item.name}
                         href={item.href}
                         aria-current={item.current ? 'page' : undefined}
-                      >
-                        <a
-                          className={`${router.pathname.includes(item.urlMatch || '')
+                        className={`${router.pathname.includes(item.urlMatch || '')
                             ? 'bg-primary text-white '
                             : 'hover:bg-primary-focus hover:text-white '
                             }
                         px-3 py-2 rounded-md text-sm font-medium`}
-                        >
+                      >
                           {item.name}
-                        </a>
                       </Link>
                     ))}
                   </div>

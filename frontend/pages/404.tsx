@@ -16,10 +16,8 @@ export default function FourOhFour() {
         </div>
 
         <div className="px-5 py-5 mb-5 w-full">
-          <Link href="/">
-            <a className='btn'>
+          <Link href="/" className='btn'>
               Go back home
-            </a>
           </Link>
 
         </div>
