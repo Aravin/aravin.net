@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import Articles from '../components/articles';
 import Layout from '../components/layout';
 import Seo from '../components/seo';
@@ -9,24 +9,28 @@ import {
   faGithub,
   faStackOverflow,
   faLinkedin,
-  faGoogle,
   faTwitter,
   faFacebook,
 } from '@fortawesome/free-brands-svg-icons';
 
 import Particles from 'react-tsparticles';
-import { faLink } from '@fortawesome/free-solid-svg-icons';
+import { loadFull } from 'tsparticles';
 import { Projects } from '../components/projects';
+import { Container, Engine } from 'tsparticles-engine';
 
 const Home = ({ articles, categories, homepage }: any) => {
-  const particlesInit = (engine: any) => {
-    // console.log(main)
-    // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
-  };
+  const particlesInit = useCallback(async (engine: Engine) => {
+    console.log(engine);
 
-  const particlesLoaded = (container: any) => {
-    // console.log(container)
-  };
+    // you can initialize the tsParticles instance (engine) here, adding custom shapes or presets
+    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+    // starting from v2 you can add only the features you need reducing the bundle size
+    await loadFull(engine);
+  }, []);
+
+  const particlesLoaded = useCallback(async (container: Container | undefined) => {
+    // await console.log(container);
+  }, []);
 
   const seo = {
     metaTitle: 'Home - A technology blog.',
