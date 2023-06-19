@@ -14,7 +14,7 @@ const Layout = ({ children }: any) => (
           Aravin.net
         </a>
         <p className="mt-4 text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l sm:border-gray-200 sm:mt-0">
-          © 2021
+          © { new Date().getFullYear()}
         </p>
         <span className="inline-flex justify-center mt-4 space-x-5 sm:ml-auto sm:mt-0 sm:justify-start">
           <a
