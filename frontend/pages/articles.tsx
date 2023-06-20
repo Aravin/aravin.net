@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { fetchAPI } from '../lib/api';
 import Layout from '../components/layout';
 import Seo from '../components/seo';
@@ -11,6 +11,10 @@ hljs.registerLanguage('javascript', javascript);
 hljs.registerLanguage('cs', cs);
 
 const Article = ({ articles }: any) => {
+
+  // todo modify to pagination
+  const [articleLimit, setArticleLimit] = useState(10);
+
   useEffect(() => {
     hljs.highlightAll();
   }, []);
@@ -25,7 +29,14 @@ const Article = ({ articles }: any) => {
   return (
     <Layout>
       <Seo seo={seo} />
-      <Articles articles={articles} limit={10} />
+      <Articles articles={articles} limit={articleLimit} />
+      
+      {
+        articleLimit <= articles.length &&
+        <div className='flex items-center justify-center'>
+        <button className='btn btn-outline' onClick={() => setArticleLimit(articleLimit+5)}>Load more...</button>
+      </div>
+      }
     </Layout>
   );
 };
