@@ -7,8 +7,46 @@ import Image from 'next/image';
 
 export const Projects = () => {
   return <>
-    <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 place-items-center place-self-stretch">
-      <div className="card compact text-center shadow-2xl p-8 rounded border-2 hover:border-primary-focus bg-white">
+    <div className="flex flex-wrap justify-center">
+      <div className="sm:basis-full md:basis-1/2 lg:basis-2/6">
+        <div className='card compact text-center shadow-2xl p-4 m-4 rounded border-2 hover:border-primary-focus bg-white'>
+        <figure className="relative p-5 mb-5 w-80 h-40 self-center">
+          <Image
+            layout="fill"
+            src="/projects/resumevita-com.png"
+            alt="resumevita.com"
+          />
+        </figure>
+        <div className="card-body">
+          <h2 className="card-title">
+            <a
+              href="https://www.resumevita.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FontAwesomeIcon
+                icon={faLink}
+                size="xs"
+                className="w-5 mr-2 inline text-primary"
+              />
+              ResumeVita.com
+            </a>
+          </h2>
+          <p className="p-4">Open Source Resume Generator</p>
+          <div className="justify-center card-actions">
+            <div>
+              <div className="badge badge-primary m-2">Next.js</div>
+              <div className="badge badge-primary m-2">React.js</div>
+              <div className="badge badge-primary m-2">JavaScript</div>
+              <div className="badge badge-primary m-2">TypeScript</div>
+              <div className="badge badge-primary m-2">Vercel</div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div className="sm:basis-full md:basis-1/2 lg:basis-2/6">
+        <div className='card compact text-center shadow-2xl p-4 m-4 rounded border-2 hover:border-primary-focus bg-white'>
         <figure className="relative p-5 mb-5 w-80 h-40 self-center">
           <Image
             layout="fill"
@@ -42,8 +80,10 @@ export const Projects = () => {
             </div>
           </div>
         </div>
+        </div>
       </div>
-      <div className="card compact text-center shadow-2xl p-8 rounded border-2 hover:border-primary-focus bg-white">
+      <div className="sm:basis-full md:basis-1/2 lg:basis-2/6">
+        <div className='card compact text-center shadow-2xl p-4 m-4 rounded border-2 hover:border-primary-focus bg-white'>
         <figure className="relative p-5 mb-5 w-80 h-40 self-center">
           <Image
             layout="fill"
@@ -78,8 +118,10 @@ export const Projects = () => {
             </div>
           </div>
         </div>
+        </div>
       </div>
-      <div className="card compact text-center shadow-2xl p-8 rounded border-2 hover:border-primary-focus bg-white">
+      <div className="sm:basis-full md:basis-1/2 lg:basis-2/6">
+        <div className='card compact text-center shadow-2xl p-4 m-4 rounded border-2 hover:border-primary-focus bg-white'>
         <figure className="relative p-5 mb-5 w-80 h-40 self-center">
           <Image
             layout="fill"
@@ -114,8 +156,10 @@ export const Projects = () => {
             </div>
           </div>
         </div>
+        </div>
       </div>
-      <div className="card compact text-center shadow-2xl p-8 rounded border-2 hover:border-primary-focus bg-white">
+      <div className="sm:basis-full md:basis-1/2 lg:basis-2/6">
+        <div className='card compact text-center shadow-2xl p-4 m-4 rounded border-2 hover:border-primary-focus bg-white'>
         <figure className="relative p-5 mb-5 w-40 h-40 self-center">
           <Image
             src={sipCalculatorImage}
@@ -146,8 +190,10 @@ export const Projects = () => {
             </div>
           </div>
         </div>
+        </div>
       </div>
-      <div className="card compact text-center shadow-2xl p-8 rounded border-2 hover:border-primary-focus bg-white">
+      <div className="sm:basis-full md:basis-1/2 lg:basis-2/6">
+        <div className='card compact text-center shadow-2xl p-4 m-4 rounded border-2 hover:border-primary-focus bg-white'>
         <figure className="relative p-5 mb-5 w-40 h-40 self-center">
           <Image
             src={warrantyManagerImage}
@@ -180,8 +226,10 @@ export const Projects = () => {
             </div>
           </div>
         </div>
+        </div>
       </div>
-      <div className="card compact text-center shadow-2xl p-8 rounded border-2 hover:border-primary-focus bg-white">
+      <div className="sm:basis-full md:basis-1/2 lg:basis-2/6">
+        <div className='card compact text-center shadow-2xl p-4 m-4 rounded border-2 hover:border-primary-focus bg-white'>
         <figure className="relative p-5 mb-5 w-40 h-40 self-center">
           <Image
             src={emiCalculatorImage}
@@ -214,6 +262,7 @@ export const Projects = () => {
               <div className="badge badge-primary m-2">Android</div>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </div>
