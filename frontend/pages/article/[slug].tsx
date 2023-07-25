@@ -59,18 +59,18 @@ const Article = ({ article }: any) => {
             </div>
             <hr />
 
-            <div className="">
+            <div>
               <div className="avatar">
-                <div className="rounded-full w-10 h-10 ring ring-primary ring-offset-base-100 ring-offset-2">
+                <div className="rounded-full w-10 h-10 ">
                   <Image
+                    className='absolute'
                     src="/Aravin.png"
                     alt="Aravind Appadurai"
-                    width={64}
-                    height={64}
+                    fill={true}
                   />
                 </div>
               </div>
-              <p>{article.author.data.attributes.firstname}</p>
+              <p>Aravin</p>
               <p>
                 <Moment format="MMM Do YYYY">{article.published_at}</Moment>
               </p>
