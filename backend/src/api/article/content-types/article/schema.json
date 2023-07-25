@@ -47,11 +47,6 @@
       "relation": "manyToMany",
       "target": "api::tag.tag",
       "mappedBy": "articles"
-    },
-    "author": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "admin::user"
     }
   }
 }
