@@ -115,3 +115,4 @@ build
 frontend/.next/*
 backend/app.yaml
 frontend/.env.local
+backend/.strapi/**
