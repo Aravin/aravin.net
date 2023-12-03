@@ -1,0 +1,22 @@
+baseURL: https://example.org/
+languageCode: en-us
+title: Aravin.net - Policies
+
+enableInlineShortcodes: true
+
+params:
+  navbar:
+    displayTitle: true
+    displayLogo: false
+
+menu:
+  main:
+    - name: Terms of Services
+      pageRef: /docs/terms
+    - name: Privacy Policy
+      pageRef: /docs/privacy
+
+module:
+  imports:
+    - path: github.com/imfing/hextra
+

@@ -1,0 +1,3 @@
+[submodule "tnc/themes/hextra"]
+	path = tnc/themes/hextra
+	url = https://github.com/imfing/hextra.git
