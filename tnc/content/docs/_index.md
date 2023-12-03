@@ -1,7 +1,7 @@
 +++
 title = 'Policies'
 date = 2023-12-03T18:37:03+05:30
-draft = true
+draft = false
 +++
 
 {{< cards >}}
