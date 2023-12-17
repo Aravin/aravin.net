@@ -1,0 +1,39 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Aravin.net'
+theme = 'stack'
+description = "Card-style Hugo theme designed for bloggers"
+
+tags = ["blog", "responsive", "clean", "light", "dark", "personal"]
+
+features = [
+    "disqus",
+    "photoswipe",
+    "opengraph",
+    "widgets",
+    "darkmode",
+    "table of contents",
+    "search",
+]
+
+[services]
+  [services.disqus]
+    shortname = 'aravin'
+
+
+[menu]
+[[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 10
+    identifier = "home"
+    [menu.main.params]
+        icon = "home"
+        newTab = true
+
+[params.comments]
+    enabled = true
+    provider = "disqus"
+    disqusShortname = "aravin"
+
+        [params.comments.disqusjs]

@@ -1,3 +1,6 @@
 [submodule "tnc/themes/hextra"]
 	path = tnc/themes/hextra
 	url = https://github.com/imfing/hextra.git
+[submodule "static/themes/stack"]
+	path = static/themes/stack
+	url = https://github.com/CaiJimmy/hugo-theme-stack.git
