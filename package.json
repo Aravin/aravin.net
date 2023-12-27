@@ -14,6 +14,7 @@
     "wait-on": "6.0.0"
   },
   "dependencies": {
+    "@hyas/doks-core": "^1.2.0",
     "qs": "^6.11.0"
   }
 }
