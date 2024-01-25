@@ -57,7 +57,7 @@ export const Projects = () => {
         <div className="card-body">
           <h2 className="card-title">
             <a
-              href="https://www.servicebird.in"
+              href="https://st-air-zone.vercel.app/"
               target="_blank"
               rel="noreferrer"
             >
@@ -87,6 +87,43 @@ export const Projects = () => {
         <figure className="relative p-5 mb-5 w-80 h-40 self-center">
           <Image
             layout="fill"
+            src="/projects/tamilnative.png"
+            alt="Tamilnative.com"
+          />
+        </figure>
+        <div className="card-body">
+          <h2 className="card-title">
+            <a
+              href="https://tamil-native.vercel.app/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FontAwesomeIcon
+                icon={faLink}
+                size="xs"
+                className="w-5 mr-2 inline text-primary"
+              />
+              Tamilnative
+            </a>
+          </h2>
+          <p className="p-4">
+          Effortlessly ship your goods from Tamil Nadu to global destinations with our comprehensive logistics solutions
+          </p>
+          <div className="justify-center card-actions">
+            <div>
+              <div className="badge badge-primary m-2">Next.js</div>
+              <div className="badge badge-primary m-2">TypeScript</div>
+              <div className="badge badge-primary m-2">Zoho CRM</div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div className="sm:basis-full md:basis-1/2 lg:basis-2/6">
+        <div className='card compact text-center shadow-2xl p-4 m-4 rounded border-2 hover:border-primary-focus bg-white'>
+        <figure className="relative p-5 mb-5 w-80 h-40 self-center">
+          <Image
+            layout="fill"
             src="/projects/epix.io.png"
             alt="epix.io Project"
           />
@@ -94,7 +131,7 @@ export const Projects = () => {
         <div className="card-body">
           <h2 className="card-title">
             <a
-              href="https://www.epix.io"
+              href="https://next-epix-8gfvniujv-aravin.vercel.app/#"
               target="_blank"
               rel="noreferrer"
             >
@@ -120,6 +157,7 @@ export const Projects = () => {
         </div>
         </div>
       </div>
+      
       <div className="sm:basis-full md:basis-1/2 lg:basis-2/6">
         <div className='card compact text-center shadow-2xl p-4 m-4 rounded border-2 hover:border-primary-focus bg-white'>
         <figure className="relative p-5 mb-5 w-80 h-40 self-center">
