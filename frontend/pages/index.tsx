@@ -205,6 +205,14 @@ const Home = ({ articles, categories, homepage }: any) => {
                 </a>
               </div>
 
+              <a
+                  href="tel:+919710549943"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                 +91 9710549943
+                </a>
+
               <div className="my-10 w-50">
                 <a
                   href="https://www.buymeacoffee.com/aravin"
