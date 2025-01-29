@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import emiCalculatorImage from '../public/projects/emi-calculator.png';
 import sipCalculatorImage from '../public/projects/sip-calculator.png';
 import warrantyManagerImage from '../public/projects/warranty-manager.jpg';
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 export const Projects = () => {
   return <>
@@ -12,10 +12,10 @@ export const Projects = () => {
         <div className='card compact text-center shadow-2xl p-4 m-4 rounded border-2 hover:border-primary-focus bg-white'>
         <figure className="relative p-5 mb-5 w-80 h-40 self-center">
           <Image
-            layout="fill"
             src="/projects/resumevita-com.png"
             alt="resumevita.com"
-          />
+            fill
+            sizes="100vw" />
         </figure>
         <div className="card-body">
           <h2 className="card-title">
@@ -48,11 +48,7 @@ export const Projects = () => {
       <div className="sm:basis-full md:basis-1/2 lg:basis-2/6">
         <div className='card compact text-center shadow-2xl p-4 m-4 rounded border-2 hover:border-primary-focus bg-white'>
         <figure className="relative p-5 mb-5 w-80 h-40 self-center">
-          <Image
-            layout="fill"
-            src="/projects/servicebird.png"
-            alt="servicebird.in"
-          />
+          <Image src="/projects/servicebird.png" alt="servicebird.in" fill sizes="100vw" />
         </figure>
         <div className="card-body">
           <h2 className="card-title">
@@ -85,11 +81,7 @@ export const Projects = () => {
       <div className="sm:basis-full md:basis-1/2 lg:basis-2/6">
         <div className='card compact text-center shadow-2xl p-4 m-4 rounded border-2 hover:border-primary-focus bg-white'>
         <figure className="relative p-5 mb-5 w-80 h-40 self-center">
-          <Image
-            layout="fill"
-            src="/projects/tamilnative.png"
-            alt="Tamilnative.com"
-          />
+          <Image src="/projects/tamilnative.png" alt="Tamilnative.com" fill sizes="100vw" />
         </figure>
         <div className="card-body">
           <h2 className="card-title">
@@ -122,11 +114,7 @@ export const Projects = () => {
       <div className="sm:basis-full md:basis-1/2 lg:basis-2/6">
         <div className='card compact text-center shadow-2xl p-4 m-4 rounded border-2 hover:border-primary-focus bg-white'>
         <figure className="relative p-5 mb-5 w-80 h-40 self-center">
-          <Image
-            layout="fill"
-            src="/projects/epix.io.png"
-            alt="epix.io Project"
-          />
+          <Image src="/projects/epix.io.png" alt="epix.io Project" fill sizes="100vw" />
         </figure>
         <div className="card-body">
           <h2 className="card-title">
@@ -162,10 +150,10 @@ export const Projects = () => {
         <div className='card compact text-center shadow-2xl p-4 m-4 rounded border-2 hover:border-primary-focus bg-white'>
         <figure className="relative p-5 mb-5 w-80 h-40 self-center">
           <Image
-            layout="fill"
             src="/projects/frontline-courier.png"
             alt="epix.io Project"
-          />
+            fill
+            sizes="100vw" />
         </figure>
         <div className="card-body">
           <h2 className="card-title">
@@ -199,11 +187,7 @@ export const Projects = () => {
       <div className="sm:basis-full md:basis-1/2 lg:basis-2/6">
         <div className='card compact text-center shadow-2xl p-4 m-4 rounded border-2 hover:border-primary-focus bg-white'>
         <figure className="relative p-5 mb-5 w-40 h-40 self-center">
-          <Image
-            src={sipCalculatorImage}
-            layout="fill"
-            alt="epix.io Project"
-          />
+          <Image src={sipCalculatorImage} alt="epix.io Project" fill sizes="100vw" />
         </figure>
         <div className="card-body">
           <h2 className="card-title">
@@ -233,11 +217,7 @@ export const Projects = () => {
       <div className="sm:basis-full md:basis-1/2 lg:basis-2/6">
         <div className='card compact text-center shadow-2xl p-4 m-4 rounded border-2 hover:border-primary-focus bg-white'>
         <figure className="relative p-5 mb-5 w-40 h-40 self-center">
-          <Image
-            src={warrantyManagerImage}
-            layout="fill"
-            alt="epix.io Project"
-          />
+          <Image src={warrantyManagerImage} alt="epix.io Project" fill sizes="100vw" />
         </figure>
         <div className="card-body">
           <h2 className="card-title">
@@ -269,11 +249,7 @@ export const Projects = () => {
       <div className="sm:basis-full md:basis-1/2 lg:basis-2/6">
         <div className='card compact text-center shadow-2xl p-4 m-4 rounded border-2 hover:border-primary-focus bg-white'>
         <figure className="relative p-5 mb-5 w-40 h-40 self-center">
-          <Image
-            src={emiCalculatorImage}
-            layout="fill"
-            alt="epix.io Project"
-          />
+          <Image src={emiCalculatorImage} alt="epix.io Project" fill sizes="100vw" />
         </figure>
         <div className="card-body">
           <h2 className="card-title">

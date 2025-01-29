@@ -3,7 +3,7 @@ import Articles from '../components/articles';
 import Layout from '../components/layout';
 import Seo from '../components/seo';
 import { fetchAPI } from '../lib/api';
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faGithub,
@@ -37,7 +37,7 @@ const Home = ({ articles, categories, homepage }: any) => {
   };
 
   return (
-    <Layout>
+    (<Layout>
       <Seo seo={seo} />
       <Particles
         id="tsparticles"
@@ -132,7 +132,10 @@ const Home = ({ articles, categories, homepage }: any) => {
               height="400"
               className="max-w-sm rounded-lg shadow-2xl"
               alt="Aravind Appadurai Photo"
-            ></Image>
+              style={{
+                maxWidth: "100%",
+                height: "auto"
+              }}></Image>
             <div>
               <h1 className="mb-5 text-5xl font-bold">
                 Hello 👋🏻 I&apos;m Aravind Appadurai
@@ -224,7 +227,10 @@ const Home = ({ articles, categories, homepage }: any) => {
                     alt="Buy Me A Coffee"
                     height="60"
                     width="217"
-                  ></Image>
+                    style={{
+                      maxWidth: "100%",
+                      height: "auto"
+                    }}></Image>
                 </a>
               </div>
             </div>
@@ -249,7 +255,7 @@ const Home = ({ articles, categories, homepage }: any) => {
           </div>
         </div>
       </div>
-    </Layout>
+    </Layout>)
   );
 };
 

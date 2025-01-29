@@ -4,7 +4,7 @@ import rehypeRaw from 'rehype-raw';
 import Moment from 'react-moment';
 import { fetchAPI } from '../../lib/api';
 import Layout from '../../components/layout';
-import Image from 'next/legacy/image';
+import Image from "next/image";
 import Seo from '../../components/seo';
 import hljs from 'highlight.js/lib/common';
 import 'highlight.js/styles/atom-one-dark.css';
@@ -29,7 +29,7 @@ const Article = ({ article }: any) => {
   };
 
   return (
-    <Layout>
+    (<Layout>
       <Seo seo={seo} />
       <div className="prose max-w-screen-lg min-h-full mx-auto bg-white sm:p-4 md:p-8 lg:p-12">
         <div id="banner">
@@ -65,9 +65,12 @@ const Article = ({ article }: any) => {
                   <Image
                     className='absolute'
                     src="/Aravin.png"
-                    alt="Aravind Appadurai"
                     // fill={true}
-                  />
+                    alt="Aravind Appadurai"
+                    style={{
+                      maxWidth: "100%",
+                      height: "auto"
+                    }} />
                 </div>
               </div>
               <p>Aravin</p>
@@ -78,7 +81,7 @@ const Article = ({ article }: any) => {
           </div>
         </div>
       </div>
-    </Layout>
+    </Layout>)
   );
 };
 
