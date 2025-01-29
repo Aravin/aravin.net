@@ -65,11 +65,10 @@ const Article = ({ article }: any) => {
                   <Image
                     className='absolute'
                     src="/Aravin.png"
-                    // fill={true}
+                    fill={true}
                     alt="Aravind Appadurai"
                     style={{
                       maxWidth: '100%',
-                      height: 'auto'
                     }} />
                 </div>
               </div>
