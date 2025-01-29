@@ -105,10 +105,13 @@ const Home = ({ articles, categories, homepage }: any) => {
 
               <div className="my-10">
                 <p className="mb-5"> Multi Cloud Certified Engineer: </p>
-                {/* add logs of aws, gcp and azue */}
                <div className="flex flex-wrap">
+               <a href="https://www.credly.com/earner/earned/badge/23f1a98d-b0b0-4e5b-8344-c26c01d3223a" target="_blank">
                <Image src="/certs/aws.png" width={100} height={100} className="max-w-sm" alt="AWS"></Image>
+               </a>
+               <a href="https://google.accredible.com/f8e7dd22-9060-4403-9b6e-3d5a91361120?key=7124d68898d06b75ec6c42cb7e2490086e1545f64e2956aa6d31bdd89a775eed" target="_blank">
                <Image src="/certs/gcp.png" width={100} height={100} className="max-w-sm" alt="GCP"></Image>
+               </a>
                </div>
               </div>
 
