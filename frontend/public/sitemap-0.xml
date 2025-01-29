@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="https://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="https://www.w3.org/1999/xhtml" xmlns:mobile="https://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="https://www.google.com/schemas/sitemap-image/1.1" xmlns:video="https://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://www.aravin.net</loc><lastmod>2022-10-27T17:51:50.030Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.aravin.net/articles</loc><lastmod>2022-10-27T17:51:50.030Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.aravin.net/portfolios</loc><lastmod>2022-10-27T17:51:50.030Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.aravin.net/article/complete-guide-integrate-ccavenue-payment-gateway-asp-net-website-screenshot</loc><lastmod>2022-10-27T17:51:50.030Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.aravin.net/article/complete-list-ccavenue-response-code-description</loc><lastmod>2022-10-27T17:51:50.030Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.aravin.net/article/implement-an-algorithm-to-check-permutation-of-two-strings</loc><lastmod>2022-10-27T17:51:50.030Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.aravin.net/article/implement-an-algorithm-to-determine-if-a-string-has-all-unique-characters</loc><lastmod>2022-10-27T17:51:50.030Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.aravin.net/article/center-align-label-textbox-html-horizontally-webpage</loc><lastmod>2022-10-27T17:51:50.030Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.aravin.net/article/steps-to-integrate-ccavenue-payment-gateway-to-your-website-using-node-js-express-framework-with-screenshot</loc><lastmod>2022-10-27T17:51:50.030Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.aravin.net/article/integrate-ccavenue-payment-gateway-asp-net-razor-website-steps-screenshots</loc><lastmod>2022-10-27T17:51:50.030Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.aravin.net/article/list-ccavenue-response-parameters-error-codes</loc><lastmod>2022-10-27T17:51:50.030Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.aravin.net/article/converting-json-toxml-xml-to-json-in-node-js-using-xml2js-package-in-typescript</loc><lastmod>2022-10-27T17:51:50.030Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.aravin.net/article/implement-an-algorithm-to-determine-if-a-string-has-all-unique-characters-with-bitwise-operator</loc><lastmod>2022-10-27T17:51:50.030Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.aravin.net/article/how-to-encrypt-plain-text-into-sha1-hash-using-csharp-program</loc><lastmod>2022-10-27T17:51:50.030Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.aravin.net/article/string-one-away-program</loc><lastmod>2022-10-27T17:51:50.030Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.aravin.net/article/palindrome-permutation-given-a-string-write-a-function-to-check-if-it-is-permutation-of-a-palindrom</loc><lastmod>2022-10-27T17:51:50.030Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.aravin.net/article/string-compression-program</loc><lastmod>2022-10-27T17:51:50.030Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url><loc>https://www.aravin.net</loc><lastmod>2025-01-29T07:29:33.771Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.aravin.net/articles</loc><lastmod>2025-01-29T07:29:33.771Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.aravin.net/portfolios</loc><lastmod>2025-01-29T07:29:33.771Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.aravin.net/article/complete-guide-integrate-ccavenue-payment-gateway-asp-net-website-screenshot</loc><lastmod>2025-01-29T07:29:33.771Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.aravin.net/article/complete-list-ccavenue-response-code-description</loc><lastmod>2025-01-29T07:29:33.771Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.aravin.net/article/implement-an-algorithm-to-check-permutation-of-two-strings</loc><lastmod>2025-01-29T07:29:33.771Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.aravin.net/article/implement-an-algorithm-to-determine-if-a-string-has-all-unique-characters</loc><lastmod>2025-01-29T07:29:33.771Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.aravin.net/article/center-align-label-textbox-html-horizontally-webpage</loc><lastmod>2025-01-29T07:29:33.771Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.aravin.net/article/integrate-ccavenue-payment-gateway-asp-net-razor-website-steps-screenshots</loc><lastmod>2025-01-29T07:29:33.771Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.aravin.net/article/list-ccavenue-response-parameters-error-codes</loc><lastmod>2025-01-29T07:29:33.771Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.aravin.net/article/converting-json-toxml-xml-to-json-in-node-js-using-xml2js-package-in-typescript</loc><lastmod>2025-01-29T07:29:33.771Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.aravin.net/article/implement-an-algorithm-to-determine-if-a-string-has-all-unique-characters-with-bitwise-operator</loc><lastmod>2025-01-29T07:29:33.771Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.aravin.net/article/how-to-encrypt-plain-text-into-sha1-hash-using-csharp-program</loc><lastmod>2025-01-29T07:29:33.771Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.aravin.net/article/string-one-away-program</loc><lastmod>2025-01-29T07:29:33.771Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.aravin.net/article/palindrome-permutation-given-a-string-write-a-function-to-check-if-it-is-permutation-of-a-palindrom</loc><lastmod>2025-01-29T07:29:33.771Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.aravin.net/article/string-compression-program</loc><lastmod>2025-01-29T07:29:33.771Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.aravin.net/article/steps-to-integrate-ccavenue-payment-gateway-to-your-website-using-node-js-express-framework</loc><lastmod>2025-01-29T07:29:33.771Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.aravin.net/article/drawing-book-hacker-rank-problem</loc><lastmod>2025-01-29T07:29:33.771Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.aravin.net/article/longest-common-prefix-program</loc><lastmod>2025-01-29T07:29:33.771Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.aravin.net/article/electronics-shop-hacker-rank-problem-java-script-solution</loc><lastmod>2025-01-29T07:29:33.772Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.aravin.net/article/supercharge-your-coding-with-aws-code-whisperer-in-vs-code</loc><lastmod>2025-01-29T07:29:33.772Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>

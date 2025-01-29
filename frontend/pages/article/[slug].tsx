@@ -4,7 +4,7 @@ import rehypeRaw from 'rehype-raw';
 import Moment from 'react-moment';
 import { fetchAPI } from '../../lib/api';
 import Layout from '../../components/layout';
-import Image from "next/image";
+import Image from 'next/image';
 import Seo from '../../components/seo';
 import hljs from 'highlight.js/lib/common';
 import 'highlight.js/styles/atom-one-dark.css';
@@ -68,8 +68,8 @@ const Article = ({ article }: any) => {
                     // fill={true}
                     alt="Aravind Appadurai"
                     style={{
-                      maxWidth: "100%",
-                      height: "auto"
+                      maxWidth: '100%',
+                      height: 'auto'
                     }} />
                 </div>
               </div>

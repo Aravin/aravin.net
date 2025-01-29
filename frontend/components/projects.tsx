@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import emiCalculatorImage from '../public/projects/emi-calculator.png';
 import sipCalculatorImage from '../public/projects/sip-calculator.png';
 import warrantyManagerImage from '../public/projects/warranty-manager.jpg';
-import Image from "next/image";
+import Image from 'next/image';
 
 export const Projects = () => {
   return <>

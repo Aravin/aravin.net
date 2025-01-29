@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.aravin.net/
+Host: https://www.aravin.net
 
 # Sitemaps
 Sitemap: https://www.aravin.net/sitemap.xml
