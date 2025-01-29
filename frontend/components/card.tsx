@@ -35,7 +35,7 @@ const Card = ({ article }: any) => {
                           className={'badge ml-1'}
                           style={
                             _.attributes.color && {
-                              backgroundColor: _.attributes.color,
+                              backgroundColor: _.attributes.color === '#fff' ? '#555' : _.attributes.color,
                             }
                           }
                         >{`#${_.attributes.slug}`}</span>

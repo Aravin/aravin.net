@@ -20,24 +20,17 @@ import { Container, Engine } from 'tsparticles-engine';
 
 const Home = ({ articles, categories, homepage }: any) => {
   const particlesInit = useCallback(async (engine: Engine) => {
-    console.log(engine);
-
-    // you can initialize the tsParticles instance (engine) here, adding custom shapes or presets
-    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-    // starting from v2 you can add only the features you need reducing the bundle size
     await loadFull(engine);
   }, []);
 
-  const particlesLoaded = useCallback(async (container: Container | undefined) => {
-    // await console.log(container);
-  }, []);
+  const particlesLoaded = useCallback(async (container: Container | undefined) => {}, []);
 
   const seo = {
     metaTitle: 'Home - A technology blog.',
   };
 
   return (
-    (<Layout>
+    <Layout>
       <Seo seo={seo} />
       <Particles
         id="tsparticles"
@@ -48,77 +41,26 @@ const Home = ({ articles, categories, homepage }: any) => {
           fpsLimit: 60,
           interactivity: {
             events: {
-              onClick: {
-                enable: true,
-                mode: 'push',
-              },
-              onHover: {
-                enable: true,
-                mode: 'repulse',
-              },
+              onClick: { enable: true, mode: 'push' },
+              onHover: { enable: true, mode: 'repulse' },
               resize: true,
             },
             modes: {
-              grab: {
-                distance: 400,
-                line_linked: {
-                  opacity: 1,
-                },
-              },
-              bubble: {
-                distance: 400,
-                duration: 2,
-                opacity: 0.8,
-                size: 40,
-              },
-              push: {
-                quantity: 1,
-              },
-              repulse: {
-                distance: 200,
-                duration: 0.4,
-              },
+              grab: { distance: 400, line_linked: { opacity: 1 } },
+              bubble: { distance: 400, duration: 2, opacity: 0.8, size: 40 },
+              push: { quantity: 1 },
+              repulse: { distance: 200, duration: 0.4 },
             },
           },
           particles: {
-            color: {
-              value: 'rgb(33, 201, 84)',
-            },
-            links: {
-              color: 'rgb(33, 201, 84)',
-              distance: 150,
-              enable: true,
-              opacity: 0.5,
-              width: 1,
-            },
-            collisions: {
-              enable: true,
-            },
-            move: {
-              direction: 'none',
-              enable: true,
-              outMode: 'bounce',
-              random: false,
-              speed: 2,
-              straight: false,
-            },
-            number: {
-              density: {
-                enable: true,
-                value_area: 800,
-              },
-              value: 80,
-            },
-            opacity: {
-              value: 0.5,
-            },
-            shape: {
-              type: 'circle',
-            },
-            size: {
-              random: true,
-              value: 5,
-            },
+            color: { value: 'rgb(33, 201, 84)' },
+            links: { color: 'rgb(33, 201, 84)', distance: 150, enable: true, opacity: 0.5, width: 1 },
+            collisions: { enable: true },
+            move: { direction: 'none', enable: true, outMode: 'bounce', random: false, speed: 2, straight: false },
+            number: { density: { enable: true, value_area: 800 }, value: 80 },
+            opacity: { value: 0.5 },
+            shape: { type: 'circle' },
+            size: { random: true, value: 5 },
           },
           detectRetina: true,
         }}
@@ -128,111 +70,51 @@ const Home = ({ articles, categories, homepage }: any) => {
           <div className="flex-col hero-content lg:flex-row-reverse">
             <Image
               src="/Aravin.png"
-              width="400"
-              height="400"
-              className="max-w-sm rounded-lg shadow-2xl"
+              width={200}
+              height={200}
+              className="max-w-sm"
               alt="Aravind Appadurai Photo"
-              style={{
-                maxWidth: "100%",
-                height: "auto"
-              }}></Image>
+              layout="responsive"
+            />
             <div>
-              <h1 className="mb-5 text-5xl font-bold">
-                Hello 👋🏻 I&apos;m Aravind Appadurai
-              </h1>
+              <h1 className="mb-5 text-5xl font-bold">Hello 👋🏻 I&apos;m Aravind Appadurai</h1>
               <p className="mb-10">
-                I am working as a Full Stack Software Developer in a Private
-                Company in Chennai. I&apos;ve worked on .NET, Node.js,
-                JavaScript, TypeScript etc.
+              Results-driven and innovative Lead Software Engineer with 10+ years of experience leading development teams on large-scale enterprise projects. Expert at translating complex technical concepts for non-technical audiences.
               </p>
 
               <div className="my-10">
                 <p className="mb-5"> Connect with me on following channels: </p>
-                <a
-                  href="https://github.com/Aravin/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <FontAwesomeIcon
-                    icon={faGithub}
-                    size="xs"
-                    className="w-10 mr-6 inline"
-                  />
+                <a href="https://github.com/Aravin/" target="_blank" rel="noreferrer">
+                  <FontAwesomeIcon icon={faGithub} size="lg" className="w-10 mr-3 inline" />
                 </a>
-                <a
-                  href="https://stackoverflow.com/users/3058254/aravin"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <FontAwesomeIcon
-                    icon={faStackOverflow}
-                    size="xs"
-                    className="w-10 mr-6 inline text-red-400"
-                  />
+                <a href="https://stackoverflow.com/users/3058254/aravin" target="_blank" rel="noreferrer">
+                  <FontAwesomeIcon icon={faStackOverflow} size="lg" className="w-10 mr-3 inline text-red-400" />
                 </a>
-                <a
-                  href="https://www.linkedin.com/in/itaravin/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <FontAwesomeIcon
-                    icon={faLinkedin}
-                    size="xs"
-                    className="w-10 mr-6 inline text-blue-700"
-                  />
+                <a href="https://www.linkedin.com/in/itaravin/" target="_blank" rel="noreferrer">
+                  <FontAwesomeIcon icon={faLinkedin} size="lg" className="w-10 mr-3 inline text-blue-700" />
                 </a>
-                {/* <a href="#" target="_blank">
-                  <FontAwesomeIcon icon={faGoogle} size="xs" className="w-10 mr-6 inline text-red-600" />
-                </a> */}
-                <a
-                  href="https://twitter.com/itaravin"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <FontAwesomeIcon
-                    icon={faTwitter}
-                    size="xs"
-                    className="w-10 mr-6 inline text-blue-400"
-                  />
+                <a href="https://twitter.com/itaravin" target="_blank" rel="noreferrer">
+                  <FontAwesomeIcon icon={faTwitter} size="lg" className="w-10 mr-3 inline text-blue-400" />
                 </a>
-                <a
-                  href="https://www.fb.me/itarav"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <FontAwesomeIcon
-                    icon={faFacebook}
-                    size="xs"
-                    className="w-10 mr-6 inline text-blue-600"
-                  />
+                <a href="https://www.fb.me/itarav" target="_blank" rel="noreferrer">
+                  <FontAwesomeIcon icon={faFacebook} size="lg" className="w-10 inline text-blue-600" />
                 </a>
               </div>
 
-              <a
-                  href="tel:+919710549943"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                 +91 9710549943
-                </a>
-
-              <div className="my-10 w-50">
-                <a
-                  href="https://www.buymeacoffee.com/aravin"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Image
-                    src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
-                    alt="Buy Me A Coffee"
-                    height="60"
-                    width="217"
-                    style={{
-                      maxWidth: "100%",
-                      height: "auto"
-                    }}></Image>
-                </a>
+              <div className="my-10">
+                <p className="mb-5"> Multi Cloud Certified Engineer: </p>
+                {/* add logs of aws, gcp and azue */}
+               <div className="flex flex-wrap">
+               <Image src="/certs/aws.png" width={100} height={100} className="max-w-sm" alt="AWS"></Image>
+               <Image src="/certs/gcp.png" width={100} height={100} className="max-w-sm" alt="GCP"></Image>
+               </div>
               </div>
+
+              <div className="my-10">
+                E-Resume: <a href="https://resume.aravin.net/" target="_blank" rel="noreferrer" className="text-blue-500 hover:text-blue-700">Click here to Open</a>
+                </div>
+
+              
             </div>
           </div>
         </div>
@@ -250,27 +132,23 @@ const Home = ({ articles, categories, homepage }: any) => {
         </div>
 
         <div>
-          <div>
-            <Articles articles={articles} limit={5} />
-          </div>
+          <Articles articles={articles} limit={5} />
         </div>
       </div>
-    </Layout>)
+    </Layout>
   );
 };
 
 export async function getStaticProps() {
-  // Run API calls in parallel
   const [articles, categories] = await Promise.all([
     fetchAPI('/articles', { populate: '*' }),
     fetchAPI('/categories', { populate: '*' }),
-    // fetchAPI("/homepage"),
   ]);
 
   return {
     props: { articles: articles.data, categories: categories.data },
     revalidate: 1,
   };
-}
+};
 
 export default Home;
