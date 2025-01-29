@@ -3,7 +3,7 @@ import Articles from '../components/articles';
 import Layout from '../components/layout';
 import Seo from '../components/seo';
 import { fetchAPI } from '../lib/api';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faGithub,

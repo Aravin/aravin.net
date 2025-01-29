@@ -4,7 +4,7 @@ import rehypeRaw from 'rehype-raw';
 import Moment from 'react-moment';
 import { fetchAPI } from '../../lib/api';
 import Layout from '../../components/layout';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import Seo from '../../components/seo';
 import hljs from 'highlight.js/lib/common';
 import 'highlight.js/styles/atom-one-dark.css';
@@ -66,7 +66,7 @@ const Article = ({ article }: any) => {
                     className='absolute'
                     src="/Aravin.png"
                     alt="Aravind Appadurai"
-                    fill={true}
+                    // fill={true}
                   />
                 </div>
               </div>
