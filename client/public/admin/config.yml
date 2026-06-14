@@ -1,0 +1,39 @@
+backend:
+  name: git-gateway
+  branch: main # Branch to update
+
+publish_mode: editorial_workflow
+
+media_folder: "client/public/media" # Media files will be stored in the repo under public/media
+public_folder: "/media" # The src attribute for uploaded media will begin with /media
+
+collections:
+  - name: "articles" # Used in routes, e.g., /admin/collections/blog
+    label: "Articles" # Used in the UI
+    folder: "client/src/content/articles" # Files imported at build time via import.meta.glob
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template matches the article slug
+    fields: # The fields for each document, usually in front matter
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Publish Date", name: "published_at", widget: "datetime"}
+      - {label: "Description", name: "description", widget: "string", required: false}
+      - {label: "Featured Image", name: "image", widget: "image", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "settings"
+    label: "Global Settings"
+    editor:
+      preview: false
+    files:
+      - label: "Global SEO"
+        name: "global"
+        file: "client/public/content/settings/global.json"
+        fields:
+          - {label: "Favicon", name: "favicon", widget: "image"}
+          - label: "Default SEO"
+            name: "defaultSeo"
+            widget: "object"
+            fields:
+              - {label: "Meta Title", name: "metaTitle", widget: "string"}
+              - {label: "Meta Description", name: "metaDescription", widget: "string"}
+              - {label: "Share Image", name: "shareImage", widget: "image"}

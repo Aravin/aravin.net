@@ -1,53 +1,67 @@
 # aravin.net
 
-This repository contains the source code for the `aravin.net` personal website, blog, and its corresponding backend content management system. It's structured as a monorepo containing multiple independently deployable services and sites.
+This repository contains the source code for the `aravin.net` personal website, portfolio, and technology blog.
 
-## 📁 Repository Structure
+## 🚀 Architecture
 
-The monorepo contains the following primary directories:
+The site was recently completely overhauled into a modern, lightning-fast statically generated application:
+- **Frontend Framework:** React 19 + Vite
+- **Styling:** Tailwind CSS v4 + DaisyUI
+- **Content Management:** Local Markdown files with YAML Frontmatter
+- **Routing:** React Router DOM
 
-- **`frontend/`**: The main user-facing website built with **Next.js**. It statically exports pages using data fetched from the Strapi backend. It uses TailwindCSS for styling.
-- **`backend/`**: A headless CMS built with **Strapi**. It manages the content (articles, categories, tags, global settings) that drives the frontend.
-- **`static/`**: An older/alternative static site built with **Hugo**.
-- **`tnc/`**: A static site built with **Hugo**, likely housing Terms and Conditions or policies.
+This new architecture completely removes the need for a database (MySQL) or headless CMS (Strapi), meaning it is 100% portable, incredibly fast, and very cheap to host.
 
-## 🚀 Getting Started Locally
+## 📁 Project Structure
 
-You can run both the frontend and backend simultaneously from the root of the project using `npm-run-all`.
+- **`client/src/`**: Contains all React components, pages, and logic.
+- **`client/public/content/articles/`**: This is where all blog posts live! They are standard `.md` files.
+- **`client/public/images/`**: Contains static images, including thumbnails and inline article images.
+
+## 🛠️ Getting Started Locally
 
 ### Prerequisites
-- Node.js (v14.19.1 - v18.x.x recommended by the Strapi backend)
+- Node.js (v18+)
 - Yarn or npm
-- MySQL (configured for the Strapi backend)
 
-### Installation
-1. Install dependencies at the root:
+### Installation & Running
+1. Navigate into the client directory:
+   ```bash
+   cd client
+   ```
+2. Install dependencies:
    ```bash
    yarn install
    ```
-2. You will also need to configure your environment variables. 
-   - Look at `backend/.env.example` to create `backend/.env`.
-   - Ensure you have a running MySQL database that matches the backend configuration.
+3. Start the development server:
+   ```bash
+   yarn dev
+   ```
 
-### Running the Environment
-From the root directory, run:
+The site will be available at `http://localhost:5173`.
 
-```bash
-yarn develop
+## ✍️ How to Add a New Article
+
+Adding a new article is as simple as creating a new markdown file!
+
+1. Create a new `.md` file in `client/public/content/articles/`. The filename will become the URL slug.
+2. Add the required YAML frontmatter at the very top of the file:
+
+```markdown
+---
+title: "Your Awesome Article Title"
+description: "A short description that will appear on cards and SEO."
+published_at: 2024-10-15T10:00:00Z
+image: /images/articles/your-thumbnail.png
+category:
+  name: "React"
+tags:
+  - slug: "react"
+  - slug: "frontend"
+---
+
+# Your content starts here!
+You can use standard markdown formatting.
 ```
 
-This command will:
-1. Start the Strapi backend on `http://localhost:1337`.
-2. Wait for the backend admin panel to become available.
-3. Start the Next.js frontend dev server (usually on `http://localhost:3000`).
-
-## 📚 Documentation for AI Agents & Developers
-
-For comprehensive details on how the system is designed, deployed, and how to develop features, please refer to the `docs/` directory:
-
-- [Architecture Guide](docs/ARCHITECTURE.md): Details on the headless CMS approach, the data models, and the frontend integrations.
-- [Deployment Guide](docs/DEPLOYMENT.md): Instructions on how the backend, Next.js frontend, and Hugo sites are deployed to production.
-- [Development Guide](docs/DEVELOPMENT.md): Tips, tricks, and conventions for navigating the codebase and making changes.
-
----
-*This documentation was generated to assist human developers and AI agents in understanding the aravin.net ecosystem.*
+3. Save the file. The site will automatically detect it and render it on the `/articles` page, sorting it seamlessly by the `published_at` date!
