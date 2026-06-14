@@ -15,6 +15,7 @@ function parseFrontmatter(markdown: string) {
       const key = line.slice(0, splitIndex).trim();
       let value = line.slice(splitIndex + 1).trim();
       if (value.startsWith('"') && value.endsWith('"')) value = value.slice(1, -1);
+      if (value.startsWith("'") && value.endsWith("'")) value = value.slice(1, -1);
       attributes[key] = value;
     }
   });
